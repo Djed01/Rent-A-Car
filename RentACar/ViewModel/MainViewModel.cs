@@ -14,9 +14,13 @@ namespace RentACar.ViewModel
         public RelayCommand CarsViewCommand { get; set; }
         public RelayCommand CustomersViewCommand { get; set; }
 
+        public RelayCommand SettingsViewCommand { get; set; }
+
         public CarsViewModel CarsVM { get; set; }
 
         public CustomersViewModel CustomersVM { get; set; }
+
+        public SettingsViewModel SettingsVM { get; set; }
 
         private object _currentView;
 
@@ -34,7 +38,9 @@ namespace RentACar.ViewModel
         {
             CarsVM = new CarsViewModel();
             CustomersVM = new CustomersViewModel();
+            SettingsVM = new SettingsViewModel();
             CurrentView = CarsVM;
+
 
             CarsViewCommand = new RelayCommand(o =>
             {
@@ -45,6 +51,12 @@ namespace RentACar.ViewModel
             {
                 CurrentView = CustomersVM;
             });
+
+            SettingsViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = SettingsVM;
+            });
+
         }
     }
 }

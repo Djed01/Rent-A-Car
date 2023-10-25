@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:RentACar"
              xmlns:viewModel="clr-namespace:RentACar.ViewModel"
              xmlns:view="clr-namespace:RentACar.View"
-             StartupUri="MainWindow.xaml">
+             >
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -18,6 +18,13 @@
             <DataTemplate DataType="{x:Type viewModel:CustomersViewModel}">
                 <view:CustomersView/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
+                <view:SettingsView/>
+            </DataTemplate>
+
+            <BitmapImage x:Key="Srb" UriSource="/Assets/Serbia-Flag.png"></BitmapImage>
+            <BitmapImage x:Key="Eng" UriSource="/Assets/United-States-Flag.png"></BitmapImage>
 
         </ResourceDictionary>
     </Application.Resources>

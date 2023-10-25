@@ -8,8 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Assets\" />
+    <None Remove="Assets\Serbia-Flag.png" />
+    <None Remove="Assets\United-States-Flag.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Serbia-Flag.png" />
+    <Resource Include="Assets\United-States-Flag.png" />
   </ItemGroup>
 
 </Project>

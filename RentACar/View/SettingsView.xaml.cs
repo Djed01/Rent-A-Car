@@ -1,5 +1,4 @@
-﻿using RentACar.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +16,11 @@ using System.Windows.Shapes;
 namespace RentACar.View
 {
     /// <summary>
-    /// Interaction logic for CarsView.xaml
+    /// Interaction logic for SettingsView.xaml
     /// </summary>
-    public partial class CarsView : UserControl
+    public partial class SettingsView : UserControl
     {
-        public CarsView()
+        public SettingsView()
         {
             InitializeComponent();
         }
