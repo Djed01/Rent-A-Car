@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="RentACar.View.CustomersView"
+﻿<UserControl x:Class="RentACar.View.RentsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -11,16 +11,15 @@
         <DataGrid Margin="10,10,10,75" HorizontalAlignment="Stretch" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="*" Binding="{Binding ID}"/>
-                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Surname" Width="*" Binding="{Binding Surname}"/>
-                <DataGridTextColumn Header="Phone" Width="*" Binding="{Binding Phone}"/>
-                <DataGridTextColumn Header="Email" Width="*" Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="DateOfBirth" Width="*" Binding="{Binding DateOfBirth}"/>
-                <DataGridTextColumn Header="Gender" Width="*" Binding="{Binding Gender}"/>
-                 <DataGridTextColumn Header="IdNumber" Width="*" Binding="{Binding IdNumber}"/>
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding CustomerName}"/>
+                <DataGridTextColumn Header="Surname" Width="*" Binding="{Binding CustomerSurname}"/>
+                <DataGridTextColumn Header="ID Number" Width="*" Binding="{Binding CustomeIdNumber}"/>
+                <DataGridTextColumn Header="Pickup Date" Width="*" Binding="{Binding PickupDate}"/>
+                <DataGridTextColumn Header="Return Date" Width="*" Binding="{Binding ReturnDate}"/>
+                <DataGridTextColumn Header="Total Price" Width="*" Binding="{Binding TotalPrice}"/>
             </DataGrid.Columns>
-            
-            
+
+
         </DataGrid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 20">
             <Button Content="Add" Width="75" Height="25" Margin="10,0,0,0"/>

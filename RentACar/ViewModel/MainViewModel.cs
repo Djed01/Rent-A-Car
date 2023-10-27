@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace RentACar.ViewModel
 {
@@ -13,12 +14,14 @@ namespace RentACar.ViewModel
 
         public RelayCommand CarsViewCommand { get; set; }
         public RelayCommand CustomersViewCommand { get; set; }
+        public RelayCommand RentsViewCommand { get; set; }
 
         public RelayCommand SettingsViewCommand { get; set; }
 
         public CarsViewModel CarsVM { get; set; }
 
         public CustomersViewModel CustomersVM { get; set; }
+        public RentsViewModel RentsVM { get; set; }
 
         public SettingsViewModel SettingsVM { get; set; }
 
@@ -33,11 +36,24 @@ namespace RentACar.ViewModel
             }
         }
 
+        private Visibility addButtonVisibility = Visibility.Visible;
+        public Visibility AddButtonVisibility
+        {
+            get { return addButtonVisibility; }
+            set
+            {
+                addButtonVisibility = value;
+                OnPropertyChanged(nameof(AddButtonVisibility)); 
+            }
+        }
+
+
 
         public MainViewModel()
         {
             CarsVM = new CarsViewModel();
             CustomersVM = new CustomersViewModel();
+            RentsVM = new RentsViewModel();
             SettingsVM = new SettingsViewModel();
             CurrentView = CarsVM;
 
@@ -45,16 +61,26 @@ namespace RentACar.ViewModel
             CarsViewCommand = new RelayCommand(o =>
             {
                 CurrentView = CarsVM;
+                AddButtonVisibility = Visibility.Visible;
             });
 
             CustomersViewCommand = new RelayCommand(o =>
             {
                 CurrentView = CustomersVM;
+                AddButtonVisibility = Visibility.Hidden;
+            });
+
+            RentsViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = RentsVM;
+                AddButtonVisibility = Visibility.Hidden;
             });
 
             SettingsViewCommand = new RelayCommand(o =>
             {
                 CurrentView = SettingsVM;
+                AddButtonVisibility = Visibility.Hidden;
+                    
             });
 
         }

@@ -4,9 +4,11 @@
              xmlns:local="clr-namespace:RentACar"
              xmlns:viewModel="clr-namespace:RentACar.ViewModel"
              xmlns:view="clr-namespace:RentACar.View"
-             >
+             
+    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
     <Application.Resources>
         <ResourceDictionary>
+           
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
@@ -16,6 +18,10 @@
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type viewModel:CustomersViewModel}">
+                <view:CustomersView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:RentsViewModel}">
                 <view:CustomersView/>
             </DataTemplate>
 
