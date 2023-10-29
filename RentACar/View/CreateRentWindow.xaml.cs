@@ -11,19 +11,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace RentACar.View
 {
     /// <summary>
-    /// Interaction logic for CarView.xaml
+    /// Interaction logic for CreateRentWindow.xaml
     /// </summary>
-    public partial class CarView : UserControl
+    public partial class CreateRentWindow : Window
     {
-        public CarView()
+        public CreateRentWindow()
         {
             InitializeComponent();
         }
+
+        private void OpenNewWindow(object sender, RoutedEventArgs e)
+        {
+            // Create a new window or navigate to a new page
+            AddCustomerWindow addCustomerWindow = new AddCustomerWindow();
+            addCustomerWindow.Show();
+        }
+
     }
 }

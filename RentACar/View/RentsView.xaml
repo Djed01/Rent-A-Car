@@ -8,12 +8,13 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#22202f">
     <Grid>
-        <DataGrid Margin="10,10,10,75" HorizontalAlignment="Stretch" IsReadOnly="True">
+        <DataGrid Margin="10,10,10,75" HorizontalAlignment="Stretch" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"  AutoGenerateColumns="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="*" Binding="{Binding ID}"/>
-                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding CustomerName}"/>
-                <DataGridTextColumn Header="Surname" Width="*" Binding="{Binding CustomerSurname}"/>
-                <DataGridTextColumn Header="ID Number" Width="*" Binding="{Binding CustomeIdNumber}"/>
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Surname" Width="*" Binding="{Binding Surname}"/>
+                <DataGridTextColumn Header="ID Number" Width="*" Binding="{Binding IdNumber}"/>
                 <DataGridTextColumn Header="Pickup Date" Width="*" Binding="{Binding PickupDate}"/>
                 <DataGridTextColumn Header="Return Date" Width="*" Binding="{Binding ReturnDate}"/>
                 <DataGridTextColumn Header="Total Price" Width="*" Binding="{Binding TotalPrice}"/>
@@ -22,7 +23,6 @@
 
         </DataGrid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 20">
-            <Button Content="Add" Width="75" Height="25" Margin="10,0,0,0"/>
             <Button Content="Edit" Width="75" Height="25" Margin="10,0,0,0"/>
             <Button Content="Delete" Width="75" Height="25" Margin="10,0,0,0"/>
         </StackPanel>

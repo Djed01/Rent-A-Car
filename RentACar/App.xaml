@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:RentACar"
              xmlns:viewModel="clr-namespace:RentACar.ViewModel"
              xmlns:view="clr-namespace:RentACar.View"
-             
     xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
     <Application.Resources>
         <ResourceDictionary>
@@ -24,7 +23,7 @@
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type viewModel:RentsViewModel}">
-                <view:CustomersView/>
+                <view:RentsView/>
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">

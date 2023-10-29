@@ -36,18 +36,6 @@ namespace RentACar.ViewModel
             }
         }
 
-        private Visibility addButtonVisibility = Visibility.Visible;
-        public Visibility AddButtonVisibility
-        {
-            get { return addButtonVisibility; }
-            set
-            {
-                addButtonVisibility = value;
-                OnPropertyChanged(nameof(AddButtonVisibility)); 
-            }
-        }
-
-
 
         public MainViewModel()
         {
@@ -61,25 +49,21 @@ namespace RentACar.ViewModel
             CarsViewCommand = new RelayCommand(o =>
             {
                 CurrentView = CarsVM;
-                AddButtonVisibility = Visibility.Visible;
             });
 
             CustomersViewCommand = new RelayCommand(o =>
             {
                 CurrentView = CustomersVM;
-                AddButtonVisibility = Visibility.Hidden;
             });
 
             RentsViewCommand = new RelayCommand(o =>
             {
                 CurrentView = RentsVM;
-                AddButtonVisibility = Visibility.Hidden;
             });
 
             SettingsViewCommand = new RelayCommand(o =>
             {
                 CurrentView = SettingsVM;
-                AddButtonVisibility = Visibility.Hidden;
                     
             });
 

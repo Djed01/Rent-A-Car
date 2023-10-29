@@ -1,0 +1,60 @@
+﻿<Window x:Class="RentACar.View.CreateRentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RentACar.View"
+        mc:Ignorable="d"
+        Title="CreateRentWindow" Height="450" Width="800"
+         >
+
+    <Grid>
+        <StackPanel Margin="10">
+            <Grid>
+            <TextBlock Margin="10 0 0 0" FontSize="16">
+                Choose an existing customer or
+                <Hyperlink Click="OpenNewWindow">
+                    add a new one
+                 </Hyperlink>
+            </TextBlock>
+                <TextBlock Text="Search by name:" HorizontalAlignment="Right" Margin="0 0 170 0"/>
+                <Border Margin="0 0 10 0"  Width="150" HorizontalAlignment="Right" CornerRadius="10" BorderBrush="Black" BorderThickness="1" Background="White">
+                <TextBox Background="Transparent" BorderThickness="0" Width="140" Foreground="Black"></TextBox>
+                 </Border>
+            </Grid>
+
+            <DataGrid Margin="10,10,10,10" Height="200"   ItemsSource="{Binding Customers}" HorizontalAlignment="Stretch" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" AutoGenerateColumns="False" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Width="*" Binding="{Binding ID}"/>
+                    <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Surname" Width="*" Binding="{Binding Surname}"/>
+                    <DataGridTextColumn Header="Email" Width="*" Binding="{Binding Email}"/>
+                    <DataGridTextColumn Header="Phone" Width="*" Binding="{Binding Phone}"/>
+                    <DataGridTextColumn Header="Date of birth" Width="*" Binding="{Binding DateOfBirth}"/>
+                    <DataGridTextColumn Header="Gender" Width="*" Binding="{Binding Gender}"/>
+                    <DataGridTextColumn Header="ID Number" Width="*" Binding="{Binding IdNumber}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Orientation="Horizontal">
+                <Grid Width="200" Height="160" HorizontalAlignment="Left">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Pickup Date:"/>
+                        <DatePicker Margin="0 10 0 10"></DatePicker>
+                        <TextBlock Text="Return Date:"/>
+                        <DatePicker Margin="0 10 0 10"></DatePicker>
+                        <TextBlock Text="{Binding SelectedCar.Brand}" />
+
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20">
+                <TextBlock FontSize="16" FontWeight="Bold" Text="Total Price: 200$"/>
+            <Button Content="OK" Background="Lime" Foreground="White"  Width="50" Height="50" Margin="0 20 0 0"/>
+        </StackPanel>
+        
+        </Grid>
+</Window>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RentACar.Model;
+using RentACar.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +26,24 @@ namespace RentACar.View
         {
             InitializeComponent();
         }
+
+        private void AddCustomerClick(object sender, RoutedEventArgs e)
+        {
+            // Create a new window or navigate to a new page
+            AddCustomerWindow addCustomerWindow = new AddCustomerWindow();
+            addCustomerWindow.Show();
+        }
+
+        private void EditCustomerClick(object sender, RoutedEventArgs e)
+        {
+            if (dataGrid.SelectedItem != null)
+            {
+                Customer selectedCustomer = (Customer)dataGrid.SelectedItem; // Assuming dataGrid is the name of your DataGrid control
+
+                EditCustomerWindow editWindow = new EditCustomerWindow(selectedCustomer);
+                editWindow.ShowDialog();
+            }
+        }
+
     }
 }

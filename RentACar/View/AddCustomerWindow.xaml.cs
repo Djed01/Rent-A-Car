@@ -1,5 +1,4 @@
-﻿using RentACar.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace RentACar.View
 {
     /// <summary>
-    /// Interaction logic for CarView.xaml
+    /// Interaction logic for AddCustomerWindow.xaml
     /// </summary>
-    public partial class CarView : UserControl
+    public partial class AddCustomerWindow : Window
     {
-        public CarView()
+        public AddCustomerWindow()
         {
             InitializeComponent();
         }

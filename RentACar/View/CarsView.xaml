@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="#22202f">
 
-    <ScrollViewer Margin="10 10 10 100">
+    <ScrollViewer>
         <ItemsControl ItemsSource="{Binding Cars}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
