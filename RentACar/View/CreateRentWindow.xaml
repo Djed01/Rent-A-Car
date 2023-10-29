@@ -9,21 +9,21 @@
          >
 
     <Grid>
-        <StackPanel Margin="10">
+
             <Grid>
-            <TextBlock Margin="10 0 0 0" FontSize="16">
+                <TextBlock Margin="10 5 0 0" FontSize="16">
                 Choose an existing customer or
                 <Hyperlink Click="OpenNewWindow">
                     add a new one
                  </Hyperlink>
-            </TextBlock>
-                <TextBlock Text="Search by name:" HorizontalAlignment="Right" Margin="0 0 170 0"/>
-                <Border Margin="0 0 10 0"  Width="150" HorizontalAlignment="Right" CornerRadius="10" BorderBrush="Black" BorderThickness="1" Background="White">
-                <TextBox Background="Transparent" BorderThickness="0" Width="140" Foreground="Black"></TextBox>
-                 </Border>
+                </TextBlock>
+                <TextBlock Text="Search by name:" HorizontalAlignment="Right" Margin="0 10 170 0"/>
+                <Border Margin="0 5 10 0"  Width="150" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right" CornerRadius="10" BorderBrush="Black" BorderThickness="1" Background="White">
+                    <TextBox Background="Transparent" BorderThickness="0" Width="140" Foreground="Black"></TextBox>
+                </Border>
             </Grid>
 
-            <DataGrid Margin="10,10,10,10" Height="200"   ItemsSource="{Binding Customers}" HorizontalAlignment="Stretch" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
+            <DataGrid Margin="10 35 10 175" ItemsSource="{Binding Customers}" HorizontalAlignment="Stretch" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Width="*" Binding="{Binding ID}"/>
@@ -37,22 +37,23 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <StackPanel Orientation="Horizontal">
-                <Grid Width="200" Height="160" HorizontalAlignment="Left">
-                    <StackPanel Margin="10">
-                        <TextBlock Text="Pickup Date:"/>
-                        <DatePicker Margin="0 10 0 10"></DatePicker>
-                        <TextBlock Text="Return Date:"/>
-                        <DatePicker Margin="0 10 0 10"></DatePicker>
-                        <TextBlock Text="{Binding SelectedCar.Brand}" />
 
-                    </StackPanel>
-                </Grid>
+
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20 20 20 0" Width="200" Height="160">
+            <TextBlock Text="Pickup Date:"/>
+            <DatePicker x:Name="pickupDatePicker" Margin="0 10 0 10"></DatePicker>
+                <TextBlock Text="Return Date:"/>
+            <DatePicker x:Name="returnDatePicker" SelectedDateChanged="ReturnDate_SelectedDateChanged" Margin="0 10 0 10"></DatePicker>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="carNameTextBlock" Text="Car: " FontSize="16" />
             </StackPanel>
         </StackPanel>
+   
 
-        <StackPanel  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20">
-                <TextBlock FontSize="16" FontWeight="Bold" Text="Total Price: 200$"/>
+
+            <StackPanel  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20">
+            <TextBlock Text="{Binding PricePerDay}"/>
+            <TextBlock x:Name="totalPriceTextBlock" FontSize="16" FontWeight="Bold"/>
             <Button Content="OK" Background="Lime" Foreground="White"  Width="50" Height="50" Margin="0 20 0 0"/>
         </StackPanel>
         

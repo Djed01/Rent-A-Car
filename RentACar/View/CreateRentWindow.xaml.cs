@@ -1,4 +1,5 @@
-﻿using RentACar.ViewModel;
+﻿using RentACar.Model;
+using RentACar.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,14 @@ namespace RentACar.View
     /// </summary>
     public partial class CreateRentWindow : Window
     {
-        public CreateRentWindow()
+        private Car car;
+        public CreateRentWindow(Car car)
         {
+
             InitializeComponent();
+
+            this.car = car;
+            carNameTextBlock.Text += car.Brand + " " + car.Model;
         }
 
         private void OpenNewWindow(object sender, RoutedEventArgs e)
@@ -31,6 +37,33 @@ namespace RentACar.View
             AddCustomerWindow addCustomerWindow = new AddCustomerWindow();
             addCustomerWindow.Show();
         }
+
+        private void ReturnDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DateTime pickupDate = pickupDatePicker.SelectedDate ?? DateTime.MinValue;
+            DateTime returnDate = returnDatePicker.SelectedDate ?? DateTime.MinValue;
+
+            if (pickupDate != DateTime.MinValue && returnDate != DateTime.MinValue)
+            {
+                TimeSpan timeSpan = returnDate - pickupDate;
+                int numberOfDays = (int)timeSpan.TotalDays;
+
+                if (numberOfDays > 0)
+                {
+                    totalPriceTextBlock.Text = $"Total price: {numberOfDays*car.PricePerDay}$";
+                }
+                else
+                {
+                    totalPriceTextBlock.Text = "Return date must be after pickup date.";
+                }
+            }
+            else
+            {
+                totalPriceTextBlock.Text = "Please select both Pickup and Return dates.";
+            }
+        }
+
+
 
     }
 }

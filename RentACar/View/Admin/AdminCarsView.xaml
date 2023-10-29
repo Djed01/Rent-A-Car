@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="RentACar.View.Admin.AdminCarsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RentACar.View.Admin"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="#22202f">
+    <ScrollViewer>
+        <ItemsControl ItemsSource="{Binding AdminCars}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:AdminCarView />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+</UserControl>

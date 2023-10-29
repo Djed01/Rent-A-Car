@@ -3,8 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:RentACar"
              xmlns:viewModel="clr-namespace:RentACar.ViewModel"
+             xmlns:adminViewModel="clr-namespace:RentACar.ViewModel.Admin"
              xmlns:view="clr-namespace:RentACar.View"
-    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
+             xmlns:adminView="clr-namespace:RentACar.View.Admin"
+    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
+             StartupUri="View/Admin/AdminMainWindow.xaml">
+    
+    
     <Application.Resources>
         <ResourceDictionary>
            
@@ -29,6 +34,19 @@
             <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
                 <view:SettingsView/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type adminViewModel:AdminCarsViewModel}">
+                <adminView:AdminCarsView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type adminViewModel:EmployeeViewModel}">
+                <adminView:EmployeeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type adminViewModel:DeactivatedViewModel}">
+                <adminView:DeactivatedView/>
+            </DataTemplate>
+
 
             <BitmapImage x:Key="Srb" UriSource="/Assets/Serbia-Flag.png"></BitmapImage>
             <BitmapImage x:Key="Eng" UriSource="/Assets/United-States-Flag.png"></BitmapImage>

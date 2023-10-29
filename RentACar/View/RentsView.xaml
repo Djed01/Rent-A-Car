@@ -8,7 +8,16 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#22202f">
     <Grid>
-        <DataGrid Margin="10,10,10,75" HorizontalAlignment="Stretch" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+        <TextBlock Text="Search by name:" HorizontalAlignment="Right" Foreground="White" Margin="15 10 170 0"/>
+        <Border Margin="0 5 0 0"  Width="150" Height="30" HorizontalAlignment="Right"  CornerRadius="10" BorderBrush="Black" BorderThickness="1" Background="White">
+                <TextBox Background="Transparent" BorderThickness="0" Margin="0 5 0 0" Width="140" Foreground="Black"></TextBox>
+        </Border>
+        </Grid>
+        
+        
+        
+        <DataGrid Margin="10,40,10,70" HorizontalAlignment="Stretch" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"  AutoGenerateColumns="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="*" Binding="{Binding ID}"/>
@@ -23,7 +32,6 @@
 
         </DataGrid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 20">
-            <Button Content="Edit" Width="75" Height="25" Margin="10,0,0,0"/>
             <Button Content="Delete" Width="75" Height="25" Margin="10,0,0,0"/>
         </StackPanel>
 

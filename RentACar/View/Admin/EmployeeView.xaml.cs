@@ -1,5 +1,4 @@
 ﻿using RentACar.Model;
-using RentACar.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,14 +15,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RentACar.View
+namespace RentACar.View.Admin
 {
     /// <summary>
-    /// Interaction logic for CustomersViewxaml.xaml
+    /// Interaction logic for EmployeeView.xaml
     /// </summary>
-    public partial class CustomersView : UserControl
+    public partial class EmployeeView : UserControl
     {
-        public CustomersView()
+        public EmployeeView()
         {
             InitializeComponent();
         }
@@ -69,6 +68,5 @@ namespace RentACar.View
                 };
             }
         }
-
     }
 }

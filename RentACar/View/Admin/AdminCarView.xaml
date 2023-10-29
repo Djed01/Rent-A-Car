@@ -1,12 +1,11 @@
-﻿<UserControl x:Class="RentACar.View.CarView"
+﻿<UserControl x:Class="RentACar.View.Admin.AdminCarView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:RentACar.View"
+             xmlns:local="clr-namespace:RentACar.View.Admin"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="1200">
-    
     <Grid Background="#F3F3F3" Margin="10">
 
         <Grid.Effect>
@@ -25,7 +24,10 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
-        <Button Content="RENT" Background="#2196F3" Height="100" Width="200" Foreground="White" FontWeight="Bold" FontSize="24" Margin="100 0 40 0" HorizontalAlignment="Right" Click="RentButton_Click"/>
+        <StackPanel  Margin="100 0 40 0" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Vertical">
+            <Button Content="Edit" Background="Lime" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Margin="0 0 0 10"/>
+            <Button Content="Del" Background="Red" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Margin="0 10 0 0"/>
+        </StackPanel>
 
     </Grid>
 </UserControl>

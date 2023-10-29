@@ -1,4 +1,5 @@
-﻿using RentACar.ViewModel;
+﻿using RentACar.Model;
+using RentACar.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,5 +26,16 @@ namespace RentACar.View
         {
             InitializeComponent();
         }
+
+        private void RentButton_Click(object sender, RoutedEventArgs e)
+        {
+            Car car = (Car)this.DataContext;
+            // Create a new instance of the detailed car information window
+            CreateRentWindow detailedInfoWindow = new CreateRentWindow(car);
+
+            // Show the detailed information window
+            detailedInfoWindow.Show();
+        }
+
     }
 }
