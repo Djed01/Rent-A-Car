@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RentACar.Model;
+using RentACar.Model.Database.DAO;
 
 namespace RentACar.ViewModel
 {
@@ -14,12 +15,10 @@ namespace RentACar.ViewModel
 
         public CustomersViewModel()
         {
-            Customers = new ObservableCollection<Customer>();
-            // Initialize the collection with existing data if needed.
-            Customer customer = new Customer(1,"Polina","Petrova","polina@nail.com","0888888888","1234567890","01.01.1990",true);
-            Customer customer2 = new Customer(2, "Marko", "Popa", "polina@nail.com", "0888888888", "1234567890", "01.01.1990", true);
-            AddCustomer(customer);
-            AddCustomer(customer2);
+
+            CustomerDAO customerDAO = new CustomerDAO();
+            Customers = new ObservableCollection<Customer>(customerDAO.GetAll());
+
         }
 
         // Add a method for adding customers

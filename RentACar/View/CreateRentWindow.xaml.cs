@@ -2,6 +2,7 @@
 using RentACar.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace RentACar.View
         {
 
             InitializeComponent();
-
+            DataContext = new CustomersViewModel();
             this.car = car;
             carNameTextBlock.Text += car.Brand + " " + car.Model;
         }
@@ -60,6 +61,31 @@ namespace RentACar.View
             else
             {
                 totalPriceTextBlock.Text = "Please select both Pickup and Return dates.";
+            }
+        }
+
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // Get the text entered in the search TextBox
+            string searchText = searchTextBox.Text;
+
+            // Access the collection view of the DataGrid's items source
+            ICollectionView view = CollectionViewSource.GetDefaultView(dataGrid.ItemsSource);
+
+            // Check if the collection view is valid
+            if (view != null)
+            {
+                // Apply a filter to the collection view
+                view.Filter = item =>
+                {
+                    if (item is Customer customer)
+                    {
+                        // Filter logic: Case-insensitive name comparison
+                        return customer.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
+                    }
+                    return false;
+                };
             }
         }
 

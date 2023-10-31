@@ -24,17 +24,17 @@
                     <DataGridTextColumn Header="Surname" Width="*" Binding="{Binding Surname}"/>
                     <DataGridTextColumn Header="Email" Width="*" Binding="{Binding Email}"/>
                     <DataGridTextColumn Header="Phone" Width="*" Binding="{Binding Phone}"/>
-                    <DataGridTextColumn Header="Date of birth" Width="*" Binding="{Binding DateOfBirth}"/>
-                    <DataGridTextColumn Header="Gender" Width="*" Binding="{Binding Gender}"/>
-                    <DataGridTextColumn Header="ID Number" Width="*" Binding="{Binding IdNumber}"/>
-                </DataGrid.Columns>
+                    <DataGridTextColumn Header="Address" Width="*" Binding="{Binding Address}"/>
+                    <DataGridTextColumn Header="City" Width="*" Binding="{Binding City}"/>
+                    <DataGridTextColumn Header="Post Code" Width="*" Binding="{Binding PostCode}"/>
+            </DataGrid.Columns>
 
 
             </DataGrid>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 20">
                 <Button Content="Add" Width="75" Height="25" Margin="10,0,0,0" Click="AddCustomerClick"/>
                 <Button Content="Edit" Width="75" Height="25" Margin="10,0,0,0" Click="EditCustomerClick"/>
-                <Button Content="Delete" Width="75" Height="25" Margin="10,0,0,0"/>
+                <Button Content="Deactivate" Width="75" Height="25" Margin="10,0,0,0"/>
             </StackPanel>
 
         </Grid>

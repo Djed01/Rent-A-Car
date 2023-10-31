@@ -1,0 +1,27 @@
+﻿<Window x:Class="RentACar.View.Admin.AddCarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RentACar.View.Admin"
+        mc:Ignorable="d"
+        Title="AddCarWindow" Height="450" Width="450">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Chassis number:" FontSize="20"/>
+            <TextBox x:Name="ChassisNumberTextBox" Width="200" Height="30" FontSize="16"/>
+            <TextBlock Text="Brand:" FontSize="20"/>
+            <TextBox Width="200" Height="30" FontSize="16"/>
+            <TextBlock Text="Model:" FontSize="20"/>
+            <TextBox Width="200" Height="30" FontSize="16"/>
+            <TextBlock Text="Year:" FontSize="20"/>
+            <TextBox Width="200" Height="30" FontSize="16"/>
+            <TextBlock Text="Price per day:" FontSize="20"/>
+            <TextBox Width="200" Height="30" FontSize="16"/>
+            <TextBlock Text="Fuel type:" FontSize="20"/>
+            <TextBox Width="200" Height="30" FontSize="16"/>
+            <TextBlock Text="Image:" FontSize="20"/>
+            <Button Content="Select Image" Click="SelectImage_Click" Background="Lime" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -10,27 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace RentACar.View.Admin
 {
     /// <summary>
-    /// Interaction logic for AdminCarsView.xaml
+    /// Interaction logic for AddEmployeeWindow.xaml
     /// </summary>
-    public partial class AdminCarsView : UserControl
+    public partial class AddEmployeeWindow : Window
     {
-        public AdminCarsView()
+        public AddEmployeeWindow()
         {
             InitializeComponent();
         }
 
-        private void AddCarButton_Click(object sender, RoutedEventArgs e)
+        private void AddEmployeeButton_Click(object sender, RoutedEventArgs e)
         {
-            AddCarWindow addCarWindow = new AddCarWindow();
-            addCarWindow.Show();
+
         }
     }
-
-
 }

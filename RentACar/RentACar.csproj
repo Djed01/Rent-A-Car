@@ -8,11 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\CarImages\Chassis1.png" />
+    <None Remove="Assets\CarImages\Chassis2.png" />
+    <None Remove="Assets\CarImages\Chassis3.png" />
     <None Remove="Assets\Serbia-Flag.png" />
     <None Remove="Assets\United-States-Flag.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\CarImages\Chassis1.png" />
+    <Resource Include="Assets\CarImages\Chassis2.png" />
+    <Resource Include="Assets\CarImages\Chassis3.png" />
     <Resource Include="Assets\Serbia-Flag.png" />
     <Resource Include="Assets\United-States-Flag.png" />
   </ItemGroup>

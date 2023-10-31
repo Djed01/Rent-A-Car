@@ -26,5 +26,9 @@ namespace RentACar.Model
             Engine = engine;
             Image = image;
         }
+
+        public Car()
+        {
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RentACar.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,27 +11,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace RentACar.View.Admin
 {
     /// <summary>
-    /// Interaction logic for AdminCarsView.xaml
+    /// Interaction logic for EditCarWindow.xaml
     /// </summary>
-    public partial class AdminCarsView : UserControl
+    public partial class EditCarWindow : Window
     {
-        public AdminCarsView()
+        public EditCarWindow(Car car)
         {
             InitializeComponent();
         }
-
-        private void AddCarButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddCarWindow addCarWindow = new AddCarWindow();
-            addCarWindow.Show();
-        }
     }
-
-
 }

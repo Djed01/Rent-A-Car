@@ -11,22 +11,24 @@
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
         <TextBlock Text="Search by name:" HorizontalAlignment="Right" Foreground="White" Margin="15 10 170 0"/>
         <Border Margin="0 5 0 0"  Width="150" Height="30" HorizontalAlignment="Right"  CornerRadius="10" BorderBrush="Black" BorderThickness="1" Background="White">
-                <TextBox Background="Transparent" BorderThickness="0" Margin="0 5 0 0" Width="140" Foreground="Black"></TextBox>
+                <TextBox x:Name="searchTextBox" TextChanged="TextBox_TextChanged" Background="Transparent" BorderThickness="0" Margin="0 5 0 0" Width="140" Foreground="Black"> </TextBox>
         </Border>
         </Grid>
-        
-        
-        
-        <DataGrid Margin="10,40,10,70" HorizontalAlignment="Stretch" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
+
+
+
+        <DataGrid x:Name="dataGrid" Margin="10,40,10,70" HorizontalAlignment="Stretch"  ItemsSource="{Binding Rents}" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"  AutoGenerateColumns="False" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Width="*" Binding="{Binding ID}"/>
-                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Surname" Width="*" Binding="{Binding Surname}"/>
-                <DataGridTextColumn Header="ID Number" Width="*" Binding="{Binding IdNumber}"/>
-                <DataGridTextColumn Header="Pickup Date" Width="*" Binding="{Binding PickupDate}"/>
-                <DataGridTextColumn Header="Return Date" Width="*" Binding="{Binding ReturnDate}"/>
-                <DataGridTextColumn Header="Total Price" Width="*" Binding="{Binding TotalPrice}"/>
+                <DataGridTextColumn Header="ID" Width="*" Binding="{Binding idRent}"/>
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Surname" Width="*" Binding="{Binding surname}"/>
+                <DataGridTextColumn Header="ID Number" Width="*" Binding="{Binding idNumber}"/>
+                <DataGridTextColumn Header="Brand" Width="*" Binding="{Binding brand}"/>
+                <DataGridTextColumn Header="Model" Width="*" Binding="{Binding model}"/>
+                <DataGridTextColumn Header="Pickup Date" Width="*" Binding="{Binding pickUp}"/>
+                <DataGridTextColumn Header="Return Date" Width="*" Binding="{Binding returnDate}"/>
+                <DataGridTextColumn Header="Total Price" Width="*" Binding="{Binding totalPrice}"/>
             </DataGrid.Columns>
 
 

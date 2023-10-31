@@ -14,12 +14,12 @@ namespace RentACar.Model
         public string Email { get; set; }
         public string Phone { get; set; }
         public string DateOfBirth { get; set; }
-        public bool Gender { get; set; }
+        public string Gender { get; set; }
         public string IdNumber { get; set; }
 
-        public Customer(int iD, string name, string surname, string email, string phone, string idNumber, string dateOfBirth, bool gender)
+        public Customer(int id, string name, string surname, string email, string phone, string idNumber, string dateOfBirth, string gender)
         {
-            ID = iD;
+            ID = id;
             Name = name;
             Surname = surname;
             Email = email;
@@ -27,6 +27,10 @@ namespace RentACar.Model
             IdNumber = idNumber;
             DateOfBirth = dateOfBirth;
             Gender = gender;
+        }
+
+        public Customer()
+        {
         }
     }
 }

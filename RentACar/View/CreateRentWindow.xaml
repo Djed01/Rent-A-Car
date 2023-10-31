@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:RentACar.View"
         mc:Ignorable="d"
         Title="CreateRentWindow" Height="450" Width="800"
+         DataContext="{Binding CustomersViewModel}"
          >
 
     <Grid>
@@ -19,11 +20,11 @@
                 </TextBlock>
                 <TextBlock Text="Search by name:" HorizontalAlignment="Right" Margin="0 10 170 0"/>
                 <Border Margin="0 5 10 0"  Width="150" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right" CornerRadius="10" BorderBrush="Black" BorderThickness="1" Background="White">
-                    <TextBox Background="Transparent" BorderThickness="0" Width="140" Foreground="Black"></TextBox>
+                <TextBox x:Name="searchTextBox" TextChanged="TextBox_TextChanged" Background="Transparent" BorderThickness="0" Width="140" Foreground="Black" Margin="0 3 0 0"></TextBox>
                 </Border>
             </Grid>
 
-            <DataGrid Margin="10 35 10 175" ItemsSource="{Binding Customers}" HorizontalAlignment="Stretch" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
+            <DataGrid x:Name="dataGrid" Margin="10 35 10 175" ItemsSource="{Binding Customers}" HorizontalAlignment="Stretch" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Width="*" Binding="{Binding ID}"/>

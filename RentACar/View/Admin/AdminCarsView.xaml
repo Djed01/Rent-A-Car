@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:RentACar.View.Admin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="#22202f">
-    <ScrollViewer>
+    <Grid>
+    <ScrollViewer Margin="0 0 0 75">
         <ItemsControl ItemsSource="{Binding AdminCars}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -15,4 +16,6 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
+        <Button x:Name="AddCarButton" Content="Add" Background="Lime" Foreground="White" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 5" Click="AddCarButton_Click"/>
+    </Grid>
 </UserControl>
