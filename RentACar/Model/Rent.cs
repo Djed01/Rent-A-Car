@@ -14,10 +14,10 @@ namespace RentACar.Model
         public string ChassisNumber { get; set; }
         public string PickupDate { get; set; }
         public string ReturnDate { get; set; }
-        public double TotalPrice { get; set; }
+        public int TotalPrice { get; set; }
         public int EmployeeID { get; set; }
 
-        public Rent(int iD, int customerID, string chassisNumber, string pickupDate, string returnDate, double totalPrice, int employeeID)
+        public Rent(int iD, int customerID, string chassisNumber, string pickupDate, string returnDate, int totalPrice, int employeeID)
         {
             ID = iD;
             CustomerID = customerID;
@@ -27,5 +27,7 @@ namespace RentACar.Model
             TotalPrice = totalPrice;
             EmployeeID = employeeID;
         }
+
+        public Rent() { }
     }
 }

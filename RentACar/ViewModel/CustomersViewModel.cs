@@ -11,7 +11,7 @@ namespace RentACar.ViewModel
 {
     class CustomersViewModel
     {
-        public ObservableCollection<Customer> Customers { get; set; }
+        public static ObservableCollection<Customer> Customers { get; set; }
 
         public CustomersViewModel()
         {
@@ -22,9 +22,20 @@ namespace RentACar.ViewModel
         }
 
         // Add a method for adding customers
-        public void AddCustomer(Customer customer)
+        public static void AddCustomer(Customer customer)
         {
             Customers.Add(customer);
+        }
+
+        public static void RemoveCustomer(Customer customer)
+        {
+            Customers.Remove(customer);
+        }
+
+        public static void refreshCustomerView()
+        {
+            CustomerDAO customerDAO = new CustomerDAO();
+            Customers = new ObservableCollection<Customer>(customerDAO.GetAll());
         }
     }
 }

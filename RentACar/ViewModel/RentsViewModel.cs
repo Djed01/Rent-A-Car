@@ -13,7 +13,7 @@ namespace RentACar.ViewModel
 
     class RentsViewModel
     {
-        public ObservableCollection<RentInfo> Rents { get; set; }
+        public static ObservableCollection<RentInfo> Rents { get; set; }
 
         public RentsViewModel()
         {
@@ -23,6 +23,16 @@ namespace RentACar.ViewModel
 
         }
 
+        public static void RefreshRentView()
+        {
+            RentDAO rentDAO = new RentDAO();
+            Rents = new ObservableCollection<RentInfo>(rentDAO.GetAll());
+        }
+
+        public static void RemoveRentInfo(RentInfo rentInfo)
+        {
+            Rents.Remove(rentInfo);
+        }
 
     }
 }

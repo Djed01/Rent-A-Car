@@ -1,4 +1,6 @@
 ﻿using RentACar.Model;
+using RentACar.Model.Database.DAO;
+using RentACar.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +22,11 @@ namespace RentACar.View
     /// </summary>
     public partial class EditCustomerWindow : Window
     {
+        private Customer selectedCustomer;
         public EditCustomerWindow(Customer selectedCustomer)
         {
             InitializeComponent();
-
+            this.selectedCustomer = selectedCustomer;
             // Populate the text boxes, radio buttons, and other controls with the selected customer's data
             // For example:
             NameTextBox.Text = selectedCustomer.Name;
@@ -32,9 +35,39 @@ namespace RentACar.View
             PhoneTextBox.Text = selectedCustomer.Phone;
             DateOfBirthTextBox.Text = selectedCustomer.DateOfBirth.ToString();
             IdNumberTextBox.Text = selectedCustomer.IdNumber;
+            if(selectedCustomer.Gender == "Male")
+            {
+                MaleRadioButton.IsChecked = true;
+            }else if(selectedCustomer.Gender == "Female")
+            {
+                FemaleRadioButton.IsChecked = true;
+            }
             // ...
 
             // Set up event handlers for Save/Update button, etc.
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            String gender = "";
+            if(MaleRadioButton.IsChecked == true)
+            {
+                gender = "Male";
+            }else if(FemaleRadioButton.IsChecked == true)
+            {
+                gender = "Female";
+            }
+
+            Customer customer = new Customer(selectedCustomer.ID,NameTextBox.Text, SurnameTextBox.Text, EmailTextBox.Text,
+                PhoneTextBox.Text, IdNumberTextBox.Text, DateOfBirthTextBox.Text, gender);
+
+            if (customer != null)
+            {
+                CustomerDAO customerDAO = new CustomerDAO();
+                customerDAO.Update(selectedCustomer.ID, customer);
+                CustomersViewModel.refreshCustomerView();
+                this.Close();
+            }
         }
     }
 }

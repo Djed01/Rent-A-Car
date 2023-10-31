@@ -1,4 +1,5 @@
 ﻿using RentACar.Model;
+using RentACar.Model.Database.DAO;
 using RentACar.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,14 @@ namespace RentACar.View
             // Create a new window or navigate to a new page
             AddCustomerWindow addCustomerWindow = new AddCustomerWindow();
             addCustomerWindow.Show();
+        }
+
+        private void DeleteCustomerClick(object sender, RoutedEventArgs e)
+        {
+            Customer customer = (Customer)dataGrid.SelectedItem;
+            CustomerDAO customerDAO = new CustomerDAO();
+            customerDAO.Delete(customer.ID);
+            CustomersViewModel.RemoveCustomer(customer);
         }
 
         private void EditCustomerClick(object sender, RoutedEventArgs e)

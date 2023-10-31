@@ -8,23 +8,23 @@
         Title="AddCustomerWindow" Height="600" Width="500">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel Width="250">
-            <TextBlock Text="Name:" FontSize="20"></TextBlock>
-            <TextBox  FontSize="20" Margin="0 0 0 10"></TextBox>
+            <TextBlock  Text="Name:" FontSize="20"></TextBlock>
+            <TextBox x:Name="NameTextBox"  FontSize="20" Margin="0 0 0 10"></TextBox>
             <TextBlock Text="Surname:" FontSize="20"/>
-            <TextBox FontSize="20" Margin="0 0 0 10"></TextBox>
+            <TextBox x:Name="SurnameTextBox" FontSize="20" Margin="0 0 0 10"></TextBox>
             <TextBlock Text="Email:" FontSize="20"/>
-            <TextBox FontSize="20" Margin="0 0 0 10"></TextBox>
+            <TextBox x:Name="EmailTextBox" FontSize="20" Margin="0 0 0 10"></TextBox>
             <TextBlock Text="Phone:" FontSize="20"/>
-            <TextBox FontSize="20" Margin="0 0 0 10"></TextBox>
+            <TextBox x:Name="PhoneTextBox" FontSize="20" Margin="0 0 0 10"></TextBox>
             <TextBlock Text="Date of birth" FontSize="20"/>
-            <TextBox FontSize="20" Margin="0 0 0 10"></TextBox>
+            <TextBox x:Name="DateOfBirthTextBox" FontSize="20" Margin="0 0 0 10"></TextBox>
             <TextBlock Text="ID number" FontSize="20"/>
-            <TextBox FontSize="20" Margin="0 0 0 10"></TextBox>
+            <TextBox x:Name="IdNumberTextBox" FontSize="20" Margin="0 0 0 10"></TextBox>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <RadioButton Content="Male" FontSize="20" Margin="0 0 10 0"></RadioButton>
-                <RadioButton Content="Female" FontSize="20" Margin="10 0 0 0"></RadioButton>
+                <RadioButton x:Name="MaleRadioButton" Content="Male" FontSize="20" Margin="0 0 10 0"></RadioButton>
+                <RadioButton x:Name="FemaleRadioButton" Content="Female" FontSize="20" Margin="10 0 0 0"></RadioButton>
             </StackPanel>
-            <Button Content="OK" Width="50" Height="50" Margin="0 20 0 0" Background="Lime" Foreground="White"/>
+            <Button Content="OK" Width="50" Height="50" Margin="0 20 0 0" Background="Lime" Foreground="White" Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </Window>

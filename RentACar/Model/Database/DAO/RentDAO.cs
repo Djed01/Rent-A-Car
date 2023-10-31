@@ -23,6 +23,8 @@ namespace RentACar.Model.Database.DAO
         JOIN `customer` AS C ON R.CUSTOMER_idCustomer = C.idCUSTOMER
         JOIN `car` AS CA ON R.CAR_ChassisNumber = CA.ChassisNumber;";
 
+        private static readonly string INSERT = @"INSERT INTO `rent`(CUSTOMER_idCustomer, CAR_ChassisNumber, `Pick_Up`, `Return`, Total_Price, EMPLOYEE_USER_idUSER) VALUES (@CustomerID, @ChassisNumber, @PickupDate, @ReturnDate, @TotalPrice, @EmployeeID)";
+        private static readonly string DELETE = "DELETE FROM `rent` WHERE idRENT=@idRENT";
 
         public RentDAO() { }
 
@@ -53,7 +55,7 @@ namespace RentACar.Model.Database.DAO
                         model = reader.GetString(5),
                         pickUp = reader.GetString(6),
                         returnDate = reader.GetString(7),
-                        totalPrice = reader.GetDouble(8)
+                        totalPrice = reader.GetInt32(8)
                     });
                 }
             }
@@ -66,6 +68,57 @@ namespace RentACar.Model.Database.DAO
                 Util.CloseQuietly(reader, conn);
             }
             return result;
+        }
+
+        public int Add(Rent rent)
+        {
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            try
+            {
+                conn = Util.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = INSERT;
+                cmd.Parameters.AddWithValue("@CustomerID", rent.CustomerID);
+                cmd.Parameters.AddWithValue("@ChassisNumber", rent.ChassisNumber);
+                cmd.Parameters.AddWithValue("@PickupDate", rent.PickupDate);
+                cmd.Parameters.AddWithValue("@ReturnDate", rent.ReturnDate);
+                cmd.Parameters.AddWithValue("@TotalPrice", rent.TotalPrice);
+                cmd.Parameters.AddWithValue("@EmployeeID", rent.EmployeeID);
+                cmd.ExecuteNonQuery();
+                rent.ID = (int)cmd.LastInsertedId;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error", ex);
+            }
+            finally
+            {
+                Util.CloseQuietly(conn);
+            }
+            return rent.ID;
+        }
+
+        public void Delete(int id)
+        {
+            MySqlConnection conn = null;
+            MySqlCommand cmd;
+            try
+            {
+                conn = Util.GetConnection();
+                cmd = conn.CreateCommand();
+                cmd.CommandText = DELETE;
+                cmd.Parameters.AddWithValue("@idRENT", id);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Greska", ex);
+            }
+            finally
+            {
+                Util.CloseQuietly(conn);
+            }
         }
     }
 

@@ -49,13 +49,12 @@
                 <TextBlock x:Name="carNameTextBlock" Text="Car: " FontSize="16" />
             </StackPanel>
         </StackPanel>
-   
 
 
-            <StackPanel  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20">
-            <TextBlock Text="{Binding PricePerDay}"/>
+
+        <StackPanel  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20">
             <TextBlock x:Name="totalPriceTextBlock" FontSize="16" FontWeight="Bold"/>
-            <Button Content="OK" Background="Lime" Foreground="White"  Width="50" Height="50" Margin="0 20 0 0"/>
+            <Button Content="OK" Background="Lime" Foreground="White"  Width="50" Height="50" Margin="0 20 0 0" Click="Button_Click"/>
         </StackPanel>
         
         </Grid>

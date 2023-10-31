@@ -1,4 +1,6 @@
 ﻿using RentACar.Model;
+using RentACar.Model.Database.DAO;
+using RentACar.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +51,14 @@ namespace RentACar.View
                     return false;
                 };
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RentInfo rentInfo = (RentInfo)dataGrid.SelectedItem;
+            RentDAO rentDAO = new RentDAO();
+            rentDAO.Delete(rentInfo.idRent);
+            RentsViewModel.RemoveRentInfo(rentInfo);
         }
     }
 }

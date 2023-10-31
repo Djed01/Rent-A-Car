@@ -1,4 +1,6 @@
-﻿using RentACar.Model;
+﻿using Org.BouncyCastle.Utilities;
+using RentACar.Model;
+using RentACar.Model.Database.DAO;
 using RentACar.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -23,6 +25,7 @@ namespace RentACar.View
     public partial class CreateRentWindow : Window
     {
         private Car car;
+        private int totalPrice = 0;
         public CreateRentWindow(Car car)
         {
 
@@ -52,6 +55,7 @@ namespace RentACar.View
                 if (numberOfDays > 0)
                 {
                     totalPriceTextBlock.Text = $"Total price: {numberOfDays*car.PricePerDay}$";
+                    totalPrice = numberOfDays * (int)car.PricePerDay;
                 }
                 else
                 {
@@ -89,7 +93,49 @@ namespace RentACar.View
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Rent rent = CreateRent();
+            if (rent != null)
+            {
+                RentDAO rentDAO = new RentDAO();
+                rent.ID = rentDAO.Add(rent);
+                RentsViewModel.RefreshRentView();
+                this.Close();
+            }
+        }
 
+
+        private Rent CreateRent()
+        {
+            // Get the selected customer and dates from your window
+            Customer selectedCustomer = dataGrid.SelectedItem as Customer;
+            string pickupDate = pickupDatePicker.SelectedDate?.ToString("yyyy-MM-dd");
+            string returnDate = returnDatePicker.SelectedDate?.ToString("yyyy-MM-dd");
+
+            // Check if all required information is available
+            if (selectedCustomer != null && !string.IsNullOrEmpty(pickupDate) && !string.IsNullOrEmpty(returnDate))
+            {
+                // Create a new Rent object
+                Rent rent = new Rent()
+                {
+                    CustomerID = selectedCustomer.ID,
+                    ChassisNumber = car.ChassisNumber,
+                    PickupDate = pickupDate,
+                    ReturnDate = returnDate,
+                    TotalPrice = totalPrice,
+                    EmployeeID = 2 // TODO: ADD THE SINGED EMPLOYEE ID
+                };
+
+                return rent;
+            }
+            else
+            {
+                // Handle the case where not all required information is provided.
+                // You can display an error message or return null, depending on your requirements.
+                return null;
+            }
+        }
 
     }
 }
