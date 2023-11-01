@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RentACar.View;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -15,12 +16,9 @@ namespace RentACar
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            MainWindow = new MainWindow()
-            {
-                DataContext = new ViewModel.MainViewModel()
-            };
+            LoginWindow loginWindow = new LoginWindow();
 
-            MainWindow.Show();
+            loginWindow.Show();
 
             base.OnStartup(e);
         }

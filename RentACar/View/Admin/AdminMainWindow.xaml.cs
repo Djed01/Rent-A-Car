@@ -19,8 +19,10 @@ namespace RentACar.View.Admin
     /// </summary>
     public partial class AdminMainWindow : Window
     {
-        public AdminMainWindow()
+        public static int AdminID;
+        public AdminMainWindow(int adminID)
         {
+            AdminID = adminID;
             InitializeComponent();
         }
     }

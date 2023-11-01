@@ -6,8 +6,7 @@
              xmlns:adminViewModel="clr-namespace:RentACar.ViewModel.Admin"
              xmlns:view="clr-namespace:RentACar.View"
              xmlns:adminView="clr-namespace:RentACar.View.Admin"
-    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
-           >
+    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
     
     
     <Application.Resources>

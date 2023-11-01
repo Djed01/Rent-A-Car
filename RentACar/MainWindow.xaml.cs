@@ -22,8 +22,10 @@ namespace RentACar
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public static int EmployeeID;
+        public MainWindow(int employeeID)
         {
+            EmployeeID = employeeID;
             InitializeComponent();
            
         }

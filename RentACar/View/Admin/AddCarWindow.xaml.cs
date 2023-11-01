@@ -1,4 +1,8 @@
 ﻿using Microsoft.Win32;
+using Org.BouncyCastle.Utilities;
+using RentACar.Model;
+using RentACar.Model.Database.DAO;
+using RentACar.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -58,6 +62,30 @@ namespace RentACar.View.Admin
                     }
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(ChassisNumberTextBox.Text) ||
+               string.IsNullOrEmpty(BrandTextBox.Text) ||
+               string.IsNullOrEmpty(ModelTextBox.Text) ||
+               string.IsNullOrEmpty(YearTextBox.Text) ||
+               string.IsNullOrEmpty(PricePerDayTextBox.Text) ||
+               string.IsNullOrEmpty(FuelTypeTextBox.Text))
+            {
+                MessageBox.Show("Please fill in all the required fields.");
+                return;
+            }
+            else
+            {
+                Car car = new Car(ChassisNumberTextBox.Text, BrandTextBox.Text, ModelTextBox.Text,int.Parse(YearTextBox.Text),
+                                  double.Parse(PricePerDayTextBox.Text), FuelTypeTextBox.Text,"/Assets/CarImages/"+ ChassisNumberTextBox.Text + ".png");
+                CarDAO carDAO = new CarDAO();
+                carDAO.Add(car);
+                CarsViewModel.AddCar(car);
+                this.Close();
+            }
+
         }
     }
 }

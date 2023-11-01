@@ -124,7 +124,7 @@ namespace RentACar.View
                     PickupDate = pickupDate,
                     ReturnDate = returnDate,
                     TotalPrice = totalPrice,
-                    EmployeeID = 2 // TODO: ADD THE SINGED EMPLOYEE ID
+                    EmployeeID = MainWindow.EmployeeID 
                 };
 
                 return rent;

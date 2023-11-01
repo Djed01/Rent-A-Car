@@ -1,4 +1,6 @@
 ﻿using RentACar.Model;
+using RentACar.Model.Database.DAO;
+using RentACar.ViewModel.Admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,20 +29,20 @@ namespace RentACar.View.Admin
             InitializeComponent();
         }
 
-        private void AddCustomerClick(object sender, RoutedEventArgs e)
+        private void AddEmployeeClick(object sender, RoutedEventArgs e)
         {
             // Create a new window or navigate to a new page
-            AddCustomerWindow addCustomerWindow = new AddCustomerWindow();
-            addCustomerWindow.Show();
+            AddEmployeeWindow addEmployeeWindow = new AddEmployeeWindow();
+            addEmployeeWindow.Show();
         }
 
-        private void EditCustomerClick(object sender, RoutedEventArgs e)
+        private void EditEmployeeClick(object sender, RoutedEventArgs e)
         {
             if (dataGrid.SelectedItem != null)
             {
-                Customer selectedCustomer = (Customer)dataGrid.SelectedItem; // Assuming dataGrid is the name of your DataGrid control
+                Employee selectedEmployee = (Employee)dataGrid.SelectedItem; // Assuming dataGrid is the name of your DataGrid control
 
-                EditCustomerWindow editWindow = new EditCustomerWindow(selectedCustomer);
+                EditEmployeeWindow editWindow = new EditEmployeeWindow(selectedEmployee);
                 editWindow.ShowDialog();
             }
         }
@@ -59,13 +61,25 @@ namespace RentACar.View.Admin
                 // Apply a filter to the collection view
                 view.Filter = item =>
                 {
-                    if (item is Customer customer)
+                    if (item is Employee employee)
                     {
                         // Filter logic: Case-insensitive name comparison
-                        return customer.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
+                        return employee.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
                     }
                     return false;
                 };
+            }
+        }
+
+        private void DeactivateEmployeeClick(object sender, RoutedEventArgs e)
+        {
+            if (dataGrid.SelectedItem != null)
+            {
+                Employee selectedEmployee = (Employee)dataGrid.SelectedItem;
+                EmployeeDAO employeeDAO = new EmployeeDAO();
+                employeeDAO.Deactivate(selectedEmployee.ID,AdminMainWindow.AdminID);
+                DeactivatedViewModel.AddDeactivated(selectedEmployee);
+                EmployeeViewModel.RemoveEmployee(selectedEmployee);
             }
         }
     }

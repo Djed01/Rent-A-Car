@@ -5,23 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RentACar.View.Admin"
         mc:Ignorable="d"
-        Title="AddCarWindow" Height="450" Width="450">
+        Title="AddCarWindow" Height="500" Width="450">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Chassis number:" FontSize="20"/>
             <TextBox x:Name="ChassisNumberTextBox" Width="200" Height="30" FontSize="16"/>
             <TextBlock Text="Brand:" FontSize="20"/>
-            <TextBox Width="200" Height="30" FontSize="16"/>
+            <TextBox x:Name="BrandTextBox" Width="200" Height="30" FontSize="16"/>
             <TextBlock Text="Model:" FontSize="20"/>
-            <TextBox Width="200" Height="30" FontSize="16"/>
+            <TextBox x:Name="ModelTextBox" Width="200" Height="30" FontSize="16"/>
             <TextBlock Text="Year:" FontSize="20"/>
-            <TextBox Width="200" Height="30" FontSize="16"/>
+            <TextBox x:Name="YearTextBox" Width="200" Height="30" FontSize="16"/>
             <TextBlock Text="Price per day:" FontSize="20"/>
-            <TextBox Width="200" Height="30" FontSize="16"/>
+            <TextBox x:Name="PricePerDayTextBox" Width="200" Height="30" FontSize="16"/>
             <TextBlock Text="Fuel type:" FontSize="20"/>
-            <TextBox Width="200" Height="30" FontSize="16"/>
+            <TextBox x:Name="FuelTypeTextBox" Width="200" Height="30" FontSize="16"/>
+            <StackPanel Orientation="Horizontal">
             <TextBlock Text="Image:" FontSize="20"/>
-            <Button Content="Select Image" Click="SelectImage_Click" Background="Lime" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" />
+            <Button Content="Select Image" Click="SelectImage_Click" Background="Lime" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 5 0 0" />
+            </StackPanel>
+            <Button Content="Ok" Click="Button_Click" Background="Lime" Foreground="White" HorizontalAlignment="Center" Width="50" Height="50" VerticalAlignment="Center" Margin="20" />
         </StackPanel>
     </Grid>
 </Window>

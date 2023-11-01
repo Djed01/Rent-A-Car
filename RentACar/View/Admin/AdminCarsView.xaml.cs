@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RentACar.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace RentACar.View.Admin
         public AdminCarsView()
         {
             InitializeComponent();
+            this.DataContext = new CarsViewModel();
         }
 
         private void AddCarButton_Click(object sender, RoutedEventArgs e)

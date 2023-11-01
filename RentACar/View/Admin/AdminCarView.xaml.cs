@@ -1,5 +1,9 @@
-﻿using System;
+﻿using RentACar.Model;
+using RentACar.Model.Database.DAO;
+using RentACar.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +27,26 @@ namespace RentACar.View.Admin
         public AdminCarView()
         {
             InitializeComponent();
+        }
+
+        private void EditButtonClick(object sender, RoutedEventArgs e)
+        {
+            Car car = (Car)this.DataContext;
+            EditCarWindow editCarWindow = new EditCarWindow(car);
+            editCarWindow.Show();
+        }
+
+        private void DeleteButtonClick(object sender, RoutedEventArgs e)
+        {
+            Car car = (Car)this.DataContext;
+            CarDAO carDAO = new CarDAO();
+            carDAO.Delete(car.ChassisNumber);
+            if (File.Exists("../../.." + car.Image))
+            {
+                File.Delete("../../.." + car.Image);
+            }
+                CarsViewModel.RemoveCar(car);
+
         }
     }
 }

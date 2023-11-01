@@ -6,7 +6,7 @@ namespace RentACar.ViewModel
 {
     class CarsViewModel
     {
-        public ObservableCollection<Car> Cars { get; } = new ObservableCollection<Car>();
+        public static ObservableCollection<Car> Cars { get; set; } = new ObservableCollection<Car>();
 
         public CarsViewModel()
         {
@@ -16,6 +16,22 @@ namespace RentACar.ViewModel
              Cars.Add(new Car("Chassis3", "Mazda", "3", 2020, 30.0, "Diesel", "/Assets/CarImages/Chassis3.png")); */
             // Add more cars as needed.
 
+            CarDAO carDAO = new CarDAO();
+            Cars = new ObservableCollection<Car>(carDAO.GetAll());
+        }
+
+        public static void AddCar(Car car)
+        {
+            Cars.Add(car);
+        }
+
+        public static void RemoveCar(Car car)
+        {
+            Cars.Remove(car);
+        }
+
+        public static void RefreshCarsView()
+        {
             CarDAO carDAO = new CarDAO();
             Cars = new ObservableCollection<Car>(carDAO.GetAll());
         }

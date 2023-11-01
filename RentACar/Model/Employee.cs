@@ -33,5 +33,7 @@ namespace RentACar.Model
             Username = username;
             Password = password;
         }
+
+        public Employee() { }
     }
 }

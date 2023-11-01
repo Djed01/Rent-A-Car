@@ -1,4 +1,7 @@
-﻿using System;
+﻿using RentACar.Model;
+using RentACar.Model.Database.DAO;
+using RentACar.ViewModel.Admin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +29,32 @@ namespace RentACar.View.Admin
 
         private void AddEmployeeButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!string.IsNullOrEmpty(NameTextBox.Text) &&
+                !string.IsNullOrEmpty(SurnameTextBox.Text) &&
+                !string.IsNullOrEmpty(EmailTextBox.Text) &&
+                !string.IsNullOrEmpty(PhoneTextBox.Text) &&
+                !string.IsNullOrEmpty(AddressTextBox.Text) &&
+                !string.IsNullOrEmpty(CityTextBox.Text) &&
+                !string.IsNullOrEmpty(PostCodeTextBox.Text) &&
+                !string.IsNullOrEmpty(UsernameTextBox.Text) &&
+                !string.IsNullOrEmpty(PasswordTextBox.Password) &&
+                !string.IsNullOrEmpty(ReenteredPassowrdTextBox.Password) &&
+                PasswordTextBox.Password == ReenteredPassowrdTextBox.Password
+                )
+            {
+                Employee employee = new Employee(0, NameTextBox.Text, SurnameTextBox.Text, EmailTextBox.Text, PhoneTextBox.Text,
+                                            AddressTextBox.Text, CityTextBox.Text, PostCodeTextBox.Text, UsernameTextBox.Text, PasswordTextBox.Password);
+                EmployeeDAO employeeDAO = new EmployeeDAO();
+                employee.ID = employeeDAO.Add(employee);
+                EmployeeViewModel.AddEmployee(employee);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Enter all fields!");
+            }
+
+            
 
         }
     }

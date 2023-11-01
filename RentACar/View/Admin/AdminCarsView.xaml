@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800" Background="#22202f">
     <Grid>
     <ScrollViewer Margin="0 0 0 75">
-        <ItemsControl ItemsSource="{Binding AdminCars}">
+            <ItemsControl ItemsSource="{Binding Cars}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <local:AdminCarView />

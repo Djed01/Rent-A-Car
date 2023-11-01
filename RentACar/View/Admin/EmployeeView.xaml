@@ -16,7 +16,7 @@
 
 
 
-            <DataGrid x:Name="dataGrid" Margin="10,40,10,70"   ItemsSource="{Binding Customers}" HorizontalAlignment="Stretch" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
+            <DataGrid x:Name="dataGrid" Margin="10,40,10,70"   ItemsSource="{Binding Employees}" HorizontalAlignment="Stretch" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Width="*" Binding="{Binding ID}"/>
@@ -32,9 +32,9 @@
 
             </DataGrid>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 20">
-                <Button Content="Add" Width="75" Height="25" Margin="10,0,0,0" Click="AddCustomerClick"/>
-                <Button Content="Edit" Width="75" Height="25" Margin="10,0,0,0" Click="EditCustomerClick"/>
-                <Button Content="Deactivate" Width="75" Height="25" Margin="10,0,0,0"/>
+                <Button Content="Add" Width="75" Height="25" Margin="10,0,0,0" Click="AddEmployeeClick"/>
+                <Button Content="Edit" Width="75" Height="25" Margin="10,0,0,0" Click="EditEmployeeClick"/>
+                <Button Content="Deactivate" Width="75" Height="25" Margin="10,0,0,0" Click="DeactivateEmployeeClick"/>
             </StackPanel>
 
         </Grid>
