@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RentACar.View.Admin"
         mc:Ignorable="d"
-        Title="EditCarWindow" Height="500" Width="800">
+        Title="EditCarWindow" Height="500" Width="800" Background="{DynamicResource Backdrop}">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Brand:" FontSize="20"/>
+            <TextBlock Text="{DynamicResource BrandTitle}" Foreground="{DynamicResource Text}"  FontSize="20"/>
             <TextBox x:Name="BrandTextBox" Width="200" Height="30" FontSize="16"/>
-            <TextBlock Text="Model:" FontSize="20"/>
+            <TextBlock Text="{DynamicResource ModelTitle}" Foreground="{DynamicResource Text}" FontSize="20"/>
             <TextBox x:Name="ModelTextBox" Width="200" Height="30" FontSize="16"/>
-            <TextBlock Text="Year:" FontSize="20"/>
+            <TextBlock Text="{DynamicResource YearTitle}" Foreground="{DynamicResource Text}" FontSize="20"/>
             <TextBox x:Name="YearTextBox" Width="200" Height="30" FontSize="16"/>
-            <TextBlock Text="Price per day:" FontSize="20"/>
+            <TextBlock Text="{DynamicResource PricePerDayTitle}" Foreground="{DynamicResource Text}" FontSize="20"/>
             <TextBox x:Name="PricePerDayTextBox" Width="200" Height="30" FontSize="16"/>
-            <TextBlock Text="Fuel type:" FontSize="20"/>
+            <TextBlock Text="{DynamicResource FuelTypeTitle}" Foreground="{DynamicResource Text}" FontSize="20"/>
             <TextBox x:Name="FuelTypeTextBox" Width="200" Height="30" FontSize="16"/>
-            <Button Content="Ok" Click="Button_Click" Background="Lime" Foreground="White" HorizontalAlignment="Center" Width="50" Height="50" VerticalAlignment="Center" Margin="20" />
+            <Button Content="{DynamicResource OkTitle}" Click="Button_Click" Background="{DynamicResource Card}" Foreground="{DynamicResource Text}" HorizontalAlignment="Center" Width="50" Height="50" VerticalAlignment="Center" Margin="20" />
         </StackPanel>
     </Grid>
 </Window>

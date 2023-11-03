@@ -1,0 +1,61 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+
+    <system:String x:Key="SettingsTitle">Settings</system:String>
+    <system:String x:Key="LanguageTitle">Language</system:String>
+    <system:String x:Key="SerbianTitle">Serbian</system:String>
+    <system:String x:Key="EnglishTitle">English</system:String>
+    <system:String x:Key="ThemeTitle">Theme</system:String>
+    <system:String x:Key="LightTitle">Light</system:String>
+    <system:String x:Key="DarkTitle">Dark</system:String>
+    <system:String x:Key="NordicTitle">Nordic</system:String>
+    <system:String x:Key="SaveTitle">Save</system:String>
+
+    <system:String x:Key="SearchTitle">Search by name:</system:String>
+    <system:String x:Key="IDtitle">ID</system:String>
+    <system:String x:Key="NameTitle">Name</system:String>
+    <system:String x:Key="SurnameTitle">Surname</system:String>
+    <system:String x:Key="IdNumberTitle">ID Number</system:String>
+    <system:String x:Key="BrandTitle">Brand</system:String>
+    <system:String x:Key="ModelTitle">Model</system:String>
+    <system:String x:Key="PickUpTitle">Pickup Date</system:String>
+    <system:String x:Key="ReturnTitle">Return Date</system:String>
+    <system:String x:Key="TotalPriceTitle">Total Price</system:String>
+    <system:String x:Key="DeleteTitle">Delete</system:String>
+
+    <system:String x:Key="EmailTitle">Email</system:String>
+    <system:String x:Key="PhoneTitle">Phone</system:String>
+    <system:String x:Key="DateOfBirthTitle">Date of birth</system:String>
+    <system:String x:Key="MaleTitle">Male</system:String>
+    <system:String x:Key="FemaleTitle">Female</system:String>
+    <system:String x:Key="OkTitle">OK</system:String>
+    <system:String x:Key="GenderTitle">Gender</system:String>
+    <system:String x:Key="AddTitle">Add</system:String>
+    <system:String x:Key="EditTitle">Edit</system:String>
+    <system:String x:Key="ChoseAnCustomerTitle">Choose an existing customer or</system:String>
+    <system:String x:Key="AddANewOneTitle">Add a new customer</system:String>
+    <system:String x:Key="CarTitle">Car: </system:String>
+    <system:String x:Key="RentTitle">RENT</system:String>
+    <system:String x:Key="AddressTitle">Address</system:String>
+    <system:String x:Key="CityTitle">City</system:String>
+    <system:String x:Key="PostCodeTitle">Post Code</system:String>
+    <system:String x:Key="DeactivateTitle">Deactivate</system:String>
+    <system:String x:Key="UsernameTitle">Username</system:String>
+    <system:String x:Key="PasswordTitle">Password</system:String>
+    <system:String x:Key="ReenterPasswordTitle">Reenter password</system:String>
+    <system:String x:Key="UpdateTitle">Update</system:String>
+    <system:String x:Key="YearTitle">Year</system:String>
+    <system:String x:Key="PricePerDayTitle">Price per day</system:String>
+    <system:String x:Key="FuelTypeTitle">FuelType</system:String>
+    <system:String x:Key="ActivateTitle">Activate</system:String>
+    <system:String x:Key="CarsTitle">Cars</system:String>
+    <system:String x:Key="EmployeesTitle">Employees</system:String>
+    <system:String x:Key="DeactivatedTitle">Deactivated</system:String>
+    <system:String x:Key="LogOutTitle">Log out</system:String>
+    <system:String x:Key="ChassisNumberTitle">Chassis number</system:String>
+    <system:String x:Key="ImageTitle">Image:</system:String>
+    <system:String x:Key="SelectImageTitle">Select Image</system:String>
+    <system:String x:Key="CustomersTitle">Customers</system:String>
+    <system:String x:Key="RentalsTitle">Rentals</system:String>
+</ResourceDictionary>

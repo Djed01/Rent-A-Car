@@ -13,7 +13,7 @@
     </Window.DataContext>
 
 
-    <Border Background="#2F3952">
+    <Border Background="{DynamicResource Backdrop}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -25,19 +25,19 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="RentACar" FontSize="30" FontFamily="Franklin Gothic" FontWeight="Bold" Foreground="White" Margin="10,0,0,0" VerticalAlignment="Center"/>
+            <TextBlock Text="RentACar" FontSize="30" FontFamily="Franklin Gothic" FontWeight="Bold" Foreground="{DynamicResource Text}" Margin="10,0,0,0" VerticalAlignment="Center"/>
 
             <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="0 50 0 0">
-                <RadioButton Content="Cars" IsChecked="True" Height="50" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MenuButtonTheme}"  Command="{Binding AdminCarsViewCommand}"/>
-                <RadioButton Content="Employees" Height="50" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MenuButtonTheme}"  Command="{Binding EmployeesViewCommand}"/>
-                <RadioButton Content="Deactivated" Height="50" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MenuButtonTheme}" Command="{Binding DeactivatedViewCommand}"/>
-                <RadioButton Content="Settings" Height="50" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MenuButtonTheme}" Command="{Binding SettingsViewCommand}"/>
+                <RadioButton Content="{DynamicResource CarsTitle}" IsChecked="True" Height="50" Foreground="{DynamicResource Text}" FontSize="16" FontWeight="Bold" Style="{StaticResource MenuButtonTheme}"  Command="{Binding AdminCarsViewCommand}"/>
+                <RadioButton Content="{DynamicResource EmployeesTitle}" Height="50" Foreground="{DynamicResource Text}" FontSize="16" FontWeight="Bold" Style="{StaticResource MenuButtonTheme}"  Command="{Binding EmployeesViewCommand}"/>
+                <RadioButton Content="{DynamicResource DeactivatedTitle}" Height="50" Foreground="{DynamicResource Text}" FontSize="16" FontWeight="Bold" Style="{StaticResource MenuButtonTheme}" Command="{Binding DeactivatedViewCommand}"/>
+                <RadioButton Content="{DynamicResource SettingsTitle}" Height="50" Foreground="{DynamicResource Text}" FontSize="16" FontWeight="Bold" Style="{StaticResource MenuButtonTheme}" Command="{Binding SettingsViewCommand}"/>
             </StackPanel>
 
             <ContentControl Grid.Column="1" Grid.Row="1" Content="{Binding CurrentAdminView}"/>
             <!-- <Button Content="Add Car" Visibility="{Binding AddButtonVisibility}" Background="Lime" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="70" Width="70" Margin="0 0 0 10"/> -->
 
-            <Button Grid.Column="0" Grid.Row="1" Content="Log Out" Height="70" Width="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 70" Background="Red"/>
+            <Button Grid.Column="0" Grid.Row="1" Content="{DynamicResource LogOutTitle}" Height="70" Width="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 70" Background="Red"/>
 
         </Grid>
     </Border>

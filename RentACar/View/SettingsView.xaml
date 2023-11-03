@@ -5,24 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RentACar.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="#F0F0F0">
+             d:DesignHeight="450" d:DesignWidth="800" Background="{DynamicResource Backdrop}">
     <Grid>
-        <TextBlock Text="Settings" FontFamily="Franklin Gothic" FontSize="42" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 50 0 0"/>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"> 
-            <TextBlock Text="Language" FontFamily="Franklin Gothic" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="{DynamicResource SettingsTitle}" Foreground="{DynamicResource Text}" FontFamily="Franklin Gothic" FontSize="42" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 50 0 0"/>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="{DynamicResource LanguageTitle}" Foreground="{DynamicResource Text}" FontFamily="Franklin Gothic" FontSize="26" Margin="0 20 0 0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20 0 0">
                 <Image Source="{StaticResource Srb}" Width="24" Height="24" Margin="0,0,5,0"/>
-                <RadioButton Content="Serbian" FontFamily="Franklin Gothic" FontSize="20" Margin="0 0 30 0" Command="{Binding SerbianLanguageCommand}"/>
+                <RadioButton x:Name="SerbainRadioButton" Checked="SerbainRadioButton_Checked" Content="{DynamicResource SerbianTitle}" Foreground="{DynamicResource Text}" FontFamily="Franklin Gothic" FontSize="20" Margin="0 0 30 0" Command="{Binding SerbianLanguageCommand}"/>
 
                 <Image Source="{StaticResource Eng}" Width="24" Height="24" Margin="0,0,5,0"/>
-                <RadioButton Content="English" FontFamily="Franklin Gothic" FontSize="20" Margin="0 0 0 0" Command="{Binding EnglishLanguageCommand}"/>
+                <RadioButton x:Name="EnglishRadioButton" Checked="EnglishRadioButton_Checked" Content="{DynamicResource EnglishTitle}" Foreground="{DynamicResource Text}" FontFamily="Franklin Gothic" FontSize="20" Margin="0 0 0 0" Command="{Binding EnglishLanguageCommand}"/>
             </StackPanel>
-            <TextBlock Text="Theme" FontSize="26" FontFamily="Franklin Gothic" HorizontalAlignment="Center" Margin="0 50 0 0"/>
+            <TextBlock Text="{DynamicResource ThemeTitle}" FontSize="26" Foreground="{DynamicResource Text}" FontFamily="Franklin Gothic" HorizontalAlignment="Center" Margin="0 50 0 0"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20 0 0">
-                <RadioButton Content="Light" FontFamily="Franklin Gothic" FontSize="20" Margin="0 0 30 0" Command="{Binding ThemeCommand}" />
-                <RadioButton Content="Dark" FontFamily="Franklin Gothic" FontSize="20" Margin="30 0 0 0" Command="{Binding ThemeCommand}" />
-                <RadioButton Content="Nordic" FontFamily="Franklin Gothic" FontSize="20" Margin="30 0 0 0" Command="{Binding ThemeCommand}" />
+                <RadioButton x:Name="LightRadioButton" Content="{DynamicResource LightTitle}" Foreground="{DynamicResource Text}" FontFamily="Franklin Gothic" FontSize="20" Margin="0 0 30 0" Checked="LightRadioButtonChecked"  />
+                <RadioButton x:Name="DarkRadioButton" Content="{DynamicResource DarkTitle}" Foreground="{DynamicResource Text}" FontFamily="Franklin Gothic" FontSize="20" Margin="30 0 0 0" Checked="DarkRadioButtonChecked"  />
+                <RadioButton x:Name="NordicRadioButton" Content="{DynamicResource NordicTitle}" Foreground="{DynamicResource Text}" FontFamily="Franklin Gothic" FontSize="20" Margin="30 0 0 0"  Checked="NordicRadioButtonChecked" />
             </StackPanel>
+            <Button x:Name="SaveButton" Content="{DynamicResource SaveTitle}" Foreground="{DynamicResource Text}" Background="{DynamicResource Card}" Click="SaveButton_Click" Width="40" Height="40" Margin="0 20 0 0"/>
         </StackPanel>
     </Grid>
 </UserControl>
