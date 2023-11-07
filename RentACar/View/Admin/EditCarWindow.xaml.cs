@@ -53,6 +53,7 @@ namespace RentACar.View.Admin
                                  double.Parse(PricePerDayTextBox.Text), FuelTypeTextBox.Text, "/Assets/CarImages/" + selectedCar.ChassisNumber + ".png");
                 CarDAO carDAO = new CarDAO();
                 carDAO.Update(car);
+                CarsViewModel.RemoveCar(car);
                 CarsViewModel.RefreshCarsView();
                 this.Close();
             }

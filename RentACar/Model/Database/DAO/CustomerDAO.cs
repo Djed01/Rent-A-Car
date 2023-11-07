@@ -43,7 +43,7 @@ namespace RentACar.Model.Database.DAO
                         Email = reader.GetString(3),
                         Phone = reader.GetString(4),
                         IdNumber = reader.GetString(5),
-                        DateOfBirth = reader.GetString(6),
+                        DateOfBirth = reader.GetDateTime(6).ToString("yyyy-MM-dd"),
                         Gender = reader.GetString(7),
                     });
                 }

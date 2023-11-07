@@ -92,5 +92,9 @@ namespace RentACar
 
         }
 
+        private void LogoutClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

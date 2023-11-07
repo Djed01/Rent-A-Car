@@ -7,53 +7,58 @@ using System.Threading.Tasks;
 
 namespace RentACar.ViewModel
 {
-    class SettingsViewModel : ObservableObject
+    internal class Theme
     {
-        public RelayCommand SerbianLanguageCommand { get; set; }
-        public RelayCommand EnglishLanguageCommand { get; set; }    
-        public RelayCommand ThemeCommand { get; set; }
-
-        private string _language;
-        public string Language
+        public static Theme LightTheme = new Theme()
         {
-            get { return _language; }
-            set { 
-                _language = value;
-                OnPropertyChanged();
-            }
-        }
+            Name = "Light",
+            Background = "#FFFFFF",
+            Surface = "#9EBDF0",
+            Primary = "#FFFFFF",
+            Secondary = "#FFFFFF",
+            OnBackground = "#202020",
+            OnSurface = "#2E2E20"
+        };
 
-        private string _theme;
-
-        public string Theme
+        public static Theme DarkTheme = new Theme()
         {
-            get { return _theme;}
-            set
-            {
-                _theme = value;
-                OnPropertyChanged();
-            }
+            Name = "Dark",
+            Background = "#202020",
+            Surface = "#121212",
+            Primary = "#C38FFF",
+            Secondary = "#03DAC6",
+            OnBackground = "#FFFFFF",
+            OnSurface = "#FFFFFF"
+        };
+
+        public static Theme MixTheme = new Theme()
+        {
+            Name = "Mix",
+            Background = "#48466D",
+            Surface = "#3D84A8",
+            Primary = "#46CDCF",
+            Secondary = "#ABEDD8",
+            OnBackground = "#FFFFFF",
+            OnSurface = "#1E212D"
+        };
+
+        public string Name { get; set; }
+        public string Background { get; set; }
+        public string Surface { get; set; }
+        public string Primary { get; set; }
+        public string Secondary { get; set; }
+        public string OnBackground { get; set; }
+        public string OnSurface { get; set; }
+
+        private Theme()
+        {
+
         }
-
-        public SettingsViewModel() { 
-
-            SerbianLanguageCommand = new RelayCommand(o =>
-            {
-                Language = "Serbian";
-            });
-
-            EnglishLanguageCommand = new RelayCommand(o =>
-            {
-                Language = "English";
-            });
-
-
-            ThemeCommand = new RelayCommand(o =>
-            {
-                Theme = o.ToString();
-            });
-        
-        }
-        
     }
+    internal class SettingsViewModel
+    {
+        public string Language { get; set; }
+        public Theme Theme { get; set; }
+    }
+
 }

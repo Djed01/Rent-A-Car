@@ -45,6 +45,8 @@ namespace RentACar.View.Admin
                  PhoneTextBox.Text, AddressTextBox.Text, CityTextBox.Text, PostCodeTextBox.Text, UsernameTextBox.Text, PassowrdBox.Password);
             EmployeeDAO employeeDAO = new EmployeeDAO();
             employeeDAO.Update(updatedEmployee);
+            EmployeeViewModel.RemoveEmployee(selectedEmployee);
+            EmployeeViewModel.AddEmployee(updatedEmployee);
             EmployeeViewModel.RefreshEmployeeView();
             this.Close();
         }

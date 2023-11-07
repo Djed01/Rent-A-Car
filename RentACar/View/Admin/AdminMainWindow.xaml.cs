@@ -92,6 +92,11 @@ namespace RentACar.View.Admin
 
 
         }
+
+        private void LogoutClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
     
 }

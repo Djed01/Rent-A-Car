@@ -11,6 +11,7 @@
     <None Remove="Assets\CarImages\Chassis1.png" />
     <None Remove="Assets\CarImages\Chassis2.png" />
     <None Remove="Assets\CarImages\Chassis3.png" />
+    <None Remove="Assets\CarImages\Chassis4.png" />
     <None Remove="Assets\Serbia-Flag.png" />
     <None Remove="Assets\United-States-Flag.png" />
   </ItemGroup>

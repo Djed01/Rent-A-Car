@@ -32,8 +32,9 @@ namespace RentACar.Model.Database.DAO
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    result.Add(new Car()
-                    {
+                    result.Add(new Car(reader.GetString(0), reader.GetString(1), reader.GetString(2),
+                        reader.GetInt32(3), reader.GetDouble(4), reader.GetString(5), reader.GetString(6)));
+                   /* {
                         ChassisNumber = reader.GetString(0),
                         Brand = reader.GetString(1),
                         Model = reader.GetString(2),
@@ -41,7 +42,7 @@ namespace RentACar.Model.Database.DAO
                         PricePerDay = reader.GetDouble(4),
                         Engine = reader.GetString(5),
                         Image = reader.GetString(6),
-                    });
+                    });*/
                 }
             }
             catch (Exception ex)

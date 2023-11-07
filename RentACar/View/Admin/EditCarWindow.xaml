@@ -18,7 +18,7 @@
             <TextBox x:Name="PricePerDayTextBox" Width="200" Height="30" FontSize="16"/>
             <TextBlock Text="{DynamicResource FuelTypeTitle}" Foreground="{DynamicResource Text}" FontSize="20"/>
             <TextBox x:Name="FuelTypeTextBox" Width="200" Height="30" FontSize="16"/>
-            <Button Content="{DynamicResource OkTitle}" Click="Button_Click" Background="{DynamicResource Card}" Foreground="{DynamicResource Text}" HorizontalAlignment="Center" Width="50" Height="50" VerticalAlignment="Center" Margin="20" />
+            <Button Content="{DynamicResource OkTitle}" Click="Button_Click" Background="{DynamicResource Card}" Foreground="{DynamicResource Text}" HorizontalAlignment="Center" Width="80" Height="50" VerticalAlignment="Center" Margin="20" />
         </StackPanel>
     </Grid>
 </Window>
