@@ -1,6 +1,7 @@
 ﻿using RentACar.Model;
 using RentACar.Model.Database.DAO;
 using RentACar.ViewModel;
+using RentACar.ViewModel.Admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,7 +54,8 @@ namespace RentACar.View.Admin
                                  double.Parse(PricePerDayTextBox.Text), FuelTypeTextBox.Text, "/Assets/CarImages/" + selectedCar.ChassisNumber + ".png");
                 CarDAO carDAO = new CarDAO();
                 carDAO.Update(car);
-                CarsViewModel.RemoveCar(car);
+                CarsViewModel.RemoveCar(selectedCar);
+                CarsViewModel.AddCar(car);
                 CarsViewModel.RefreshCarsView();
                 this.Close();
             }

@@ -10,13 +10,21 @@ namespace RentACar.ViewModel.Admin
 {
     class AdminCarsViewModel
     {
-        public ObservableCollection<Car> AdminCars { get; } = new ObservableCollection<Car>();
+        public static ObservableCollection<Car> AdminCars { get; set; } = new ObservableCollection<Car>();
 
         public AdminCarsViewModel()
         {
-            // Initialize your Cars collection by adding CarViewModels here.
             AdminCars = CarsViewModel.Cars;
-            // Add more cars as needed.
+        }
+
+        public static void AddCar(Car car)
+        {
+            AdminCars.Add(car);
+        }
+
+        public static void RemoveCar(Car car)
+        {
+            AdminCars.Remove(car);
         }
     }
 }
