@@ -65,6 +65,8 @@ namespace RentACar.View
             {
                 CustomerDAO customerDAO = new CustomerDAO();
                 customerDAO.Update(selectedCustomer.ID, customer);
+                CustomersViewModel.RemoveCustomer(selectedCustomer);
+                CustomersViewModel.AddCustomer(customer);
                 CustomersViewModel.refreshCustomerView();
                 this.Close();
             }

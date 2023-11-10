@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RentACar.View.Admin"
         mc:Ignorable="d"
-        Title="AddEmployeeWindow" Height="700" Width="450" Background="{DynamicResource Backdrop}">
+        Title="{DynamicResource AddEmployeeTitle}" Height="700" Width="450" Background="{DynamicResource Backdrop}">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="{DynamicResource NameTitle}" Foreground="{DynamicResource Text}" FontSize="20"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:adminViewModel="clr-namespace:RentACar.ViewModel.Admin"
         mc:Ignorable="d"
-        Title="AdminMainWindow" Height="600" Width="1200"
+        Title="Rent A Car" Height="600" Width="1200"
         MinWidth="1200" MinHeight="540">
 
     <Window.DataContext>
@@ -25,7 +25,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="RentACar" FontSize="30" FontFamily="Franklin Gothic" FontWeight="Bold" Foreground="{DynamicResource Text}" Margin="10,0,0,0" VerticalAlignment="Center"/>
+            <TextBlock Text="RentACar" FontSize="30" FontFamily="Franklin Gothic" FontWeight="Bold" Foreground="{DynamicResource Text}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="0 50 0 0">
                 <RadioButton Content="{DynamicResource CarsTitle}" IsChecked="True" Height="50" Foreground="{DynamicResource Text}" FontSize="16" FontWeight="Bold" Style="{StaticResource MenuButtonTheme}"  Command="{Binding AdminCarsViewCommand}"/>

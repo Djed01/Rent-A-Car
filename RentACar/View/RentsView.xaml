@@ -20,7 +20,6 @@
         <DataGrid x:Name="dataGrid" Margin="10,40,10,70" HorizontalAlignment="Stretch"  ItemsSource="{Binding Rents}" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"  AutoGenerateColumns="False" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="{DynamicResource IDtitle}" Width="*" Binding="{Binding idRent}"/>
                 <DataGridTextColumn Header="{DynamicResource NameTitle}" Width="*" Binding="{Binding name}"/>
                 <DataGridTextColumn Header="{DynamicResource SurnameTitle}" Width="*" Binding="{Binding surname}"/>
                 <DataGridTextColumn Header="{DynamicResource IdNumberTitle}" Width="*" Binding="{Binding idNumber}"/>

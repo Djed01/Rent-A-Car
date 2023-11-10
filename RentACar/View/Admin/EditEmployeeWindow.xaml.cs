@@ -35,14 +35,12 @@ namespace RentACar.View.Admin
             CityTextBox.Text = employee.City;
             PostCodeTextBox.Text = employee.PostCode;
             UsernameTextBox.Text = employee.Username;
-            PassowrdBox.Password = employee.Password;
-            ReenteredPassowrdBox.Password = employee.Password;
         }
 
         private void UpdateEmployeeButton_Click(object sender, RoutedEventArgs e)
         {
             Employee updatedEmployee = new Employee(selectedEmployee.ID, NameTextBox.Text, SurnameTextBox.Text, EmailTextBox.Text,
-                 PhoneTextBox.Text, AddressTextBox.Text, CityTextBox.Text, PostCodeTextBox.Text, UsernameTextBox.Text, PassowrdBox.Password);
+                 PhoneTextBox.Text, AddressTextBox.Text, CityTextBox.Text, PostCodeTextBox.Text, UsernameTextBox.Text,selectedEmployee.Password);
             EmployeeDAO employeeDAO = new EmployeeDAO();
             employeeDAO.Update(updatedEmployee);
             EmployeeViewModel.RemoveEmployee(selectedEmployee);

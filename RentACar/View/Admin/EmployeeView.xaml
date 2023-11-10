@@ -18,8 +18,7 @@
 
             <DataGrid x:Name="dataGrid" Margin="10,40,10,70"   ItemsSource="{Binding Employees}" HorizontalAlignment="Stretch" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}"
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" AutoGenerateColumns="False" >
-                <DataGrid.Columns>
-                <DataGridTextColumn Header="{DynamicResource IDtitle}" Width="*" Binding="{Binding ID}"/>
+            <DataGrid.Columns>
                 <DataGridTextColumn Header="{DynamicResource NameTitle}" Width="*" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="{DynamicResource SurnameTitle}" Width="*" Binding="{Binding Surname}"/>
                 <DataGridTextColumn Header="{DynamicResource EmailTitle}" Width="*" Binding="{Binding Email}"/>

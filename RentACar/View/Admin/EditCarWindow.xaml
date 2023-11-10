@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RentACar.View.Admin"
         mc:Ignorable="d"
-        Title="EditCarWindow" Height="500" Width="800" Background="{DynamicResource Backdrop}">
+        Title="{DynamicResource EditCarTitle}" Height="500" Width="800" Background="{DynamicResource Backdrop}">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="{DynamicResource BrandTitle}" Foreground="{DynamicResource Text}"  FontSize="20"/>

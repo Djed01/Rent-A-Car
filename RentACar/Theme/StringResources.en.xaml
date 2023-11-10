@@ -58,4 +58,15 @@
     <system:String x:Key="SelectImageTitle">Select Image</system:String>
     <system:String x:Key="CustomersTitle">Customers</system:String>
     <system:String x:Key="RentalsTitle">Rentals</system:String>
+
+    <system:String x:Key="AddCarTitle">Add Car</system:String>
+    <system:String x:Key="AddEmployeeTitle">Add Employee</system:String>
+    <system:String x:Key="EditCarTitle">Edit Car</system:String>
+    <system:String x:Key="EditEmployeeTitle">Edit Employee</system:String>
+    <system:String x:Key="AddCustomerTitle">Add Customer</system:String>
+    <system:String x:Key="CreateRentTitle">Create Rent</system:String>
+    <system:String x:Key="EditCustomerTitle">Edit Customer</system:String>
+    <system:String x:Key="ChangePasswordTitle">Change password</system:String>
+    <system:String x:Key="CurrentPasswordTitle">Current Password</system:String>
+    <system:String x:Key="NewPasswordTitle">New Password</system:String>
 </ResourceDictionary>

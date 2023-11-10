@@ -56,4 +56,15 @@
     <system:String x:Key="CustomersTitle">Клијенти</system:String>
     <system:String x:Key="RentalsTitle">Изнајмљивања</system:String>
 
+    <system:String x:Key="AddCarTitle">Додај Аутомобил</system:String>
+    <system:String x:Key="AddEmployeeTitle">Додај Запосленог</system:String>
+    <system:String x:Key="EditCarTitle">Уреди Аутомобил</system:String>
+    <system:String x:Key="EditEmployeeTitle">Уреди Запосленог</system:String>
+    <system:String x:Key="AddCustomerTitle">Додај Клијента</system:String>
+    <system:String x:Key="CreateRentTitle">Креирај Најам</system:String>
+    <system:String x:Key="EditCustomerTitle">Уреди Клијента</system:String>
+    <system:String x:Key="ChangePasswordTitle">Промјени шифру</system:String>
+    <system:String x:Key="CurrentPasswordTitle">Тренутна шифра</system:String>
+    <system:String x:Key="NewPasswordTitle">Нова шифра</system:String>
+
 </ResourceDictionary>

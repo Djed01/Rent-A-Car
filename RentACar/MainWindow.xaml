@@ -6,7 +6,7 @@
         xmlns:viewModel="clr-namespace:RentACar.ViewModel"
         xmlns:local="clr-namespace:RentACar"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1200"
+        Title="Rent A Car" Height="600" Width="1200"
         MinWidth="1200" MinHeight="540"
         >
 
@@ -26,7 +26,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="RentACar" FontSize="30" FontFamily="Franklin Gothic" FontWeight="Bold" Foreground="{DynamicResource Text}" Margin="10,0,0,0" VerticalAlignment="Center"/>
+            <TextBlock Text="RentACar" FontSize="30" FontFamily="Franklin Gothic" FontWeight="Bold" Foreground="{DynamicResource Text}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="0 50 0 0">
                 <RadioButton Content="{DynamicResource CarsTitle}" IsChecked="True" Height="50" Foreground="{DynamicResource Text}" FontSize="16" FontWeight="Bold" Style="{StaticResource MenuButtonTheme}"  Command="{Binding CarsViewCommand}"/>
@@ -39,7 +39,11 @@
            <!-- <Button Content="Add Car" Visibility="{Binding AddButtonVisibility}" Background="Lime" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="70" Width="70" Margin="0 0 0 10"/> -->
 
             <Button Click="LogoutClick" Grid.Column="0" Grid.Row="1" Content="{DynamicResource LogOutTitle}" Foreground="{DynamicResource Text}" Height="70" Width="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 100" Background="Red"/>
-             
+            <TextBlock Foreground="{DynamicResource Text}" FontSize="16" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 50" >
+                <Hyperlink Click="Hyperlink_Click">
+                    <TextBlock Text="{DynamicResource ChangePasswordTitle}"></TextBlock> 
+                 </Hyperlink>
+            </TextBlock>
         </Grid>
     </Border>
 </Window>

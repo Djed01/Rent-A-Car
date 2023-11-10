@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using RentACar.Model;
 using RentACar.Model.Database.DAO;
+using RentACar.View;
 using RentACar.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,7 @@ namespace RentACar
     public partial class MainWindow : Window
     {
         public static int EmployeeID;
+        public static int currentLanguage;
         public MainWindow(int employeeID)
         {
             EmployeeID = employeeID;
@@ -49,6 +51,7 @@ namespace RentACar
                 {
                     language = reader.GetInt32(0);
                     mode = reader.GetInt32(1);
+                    currentLanguage = language;
 
 
                     if (mode == 1)
@@ -96,5 +99,12 @@ namespace RentACar
         {
             this.Close();
         }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            ChangePasswordWindow changePasswordWindow = new ChangePasswordWindow(EmployeeID,currentLanguage) ;
+            changePasswordWindow.Show();
+        }
+
     }
 }

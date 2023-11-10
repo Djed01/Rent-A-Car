@@ -217,7 +217,13 @@ namespace RentACar.View
                     InsertMode(AdminMainWindow.AdminID, 3);
                 }
             }
-            MessageBox.Show("Saved!");
+            if(EnglishRadioButton.IsChecked == true)
+            {
+                MessageBox.Show("Saved!", "Info");
+            }else if(SerbainRadioButton.IsChecked==true)
+            {
+                MessageBox.Show("Сачувано!", "Обавјештење");
+            }
             
         }
 
