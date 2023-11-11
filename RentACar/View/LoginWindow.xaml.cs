@@ -109,9 +109,12 @@ namespace RentACar.View
 
         private int GetEmployeeId(string username, string password)
         {
-            string query = "SELECT u.idUSER FROM user u " +
+            string query = "SELECT u.idUSER " +
+                           "FROM user u " +
                            "INNER JOIN employee e ON u.idUSER = e.USER_idUSER " +
-                           "WHERE u.Username = @username AND u.Password = @password";
+                           "LEFT JOIN DEACTIVATED d ON e.USER_idUSER = d.EMPLOYEE_USER_idUSER " +
+                           "WHERE u.Username = @username AND u.Password = @password " +
+                           "AND d.EMPLOYEE_USER_idUSER IS NULL"; // Check for deactivation
 
             MySqlConnection conn = null;
             MySqlCommand cmd;
@@ -130,8 +133,8 @@ namespace RentACar.View
                     }
                     else
                     {
-                        // Admin not found with the provided username and password
-                        return -1; // or any other suitable value to indicate no match
+                        // Admin not found with the provided username and password or deactivated
+                        return -1; // or any other suitable value to indicate no match or deactivation
                     }
                 }
             }
@@ -140,6 +143,7 @@ namespace RentACar.View
                 throw new Exception("Greska", ex);
             }
         }
+
 
 
 

@@ -14,7 +14,7 @@
     <system:String x:Key="IDtitle">ИД</system:String>
     <system:String x:Key="NameTitle">Име</system:String>
     <system:String x:Key="SurnameTitle">Презиме</system:String>
-    <system:String x:Key="IdNumberTitle">Број ИД-а</system:String>
+    <system:String x:Key="IdNumberTitle">Број личне карте</system:String>
     <system:String x:Key="BrandTitle">Марка</system:String>
     <system:String x:Key="ModelTitle">Модел</system:String>
     <system:String x:Key="PickUpTitle">Датум преузимања</system:String>
@@ -63,8 +63,8 @@
     <system:String x:Key="AddCustomerTitle">Додај Клијента</system:String>
     <system:String x:Key="CreateRentTitle">Креирај Најам</system:String>
     <system:String x:Key="EditCustomerTitle">Уреди Клијента</system:String>
-    <system:String x:Key="ChangePasswordTitle">Промјени шифру</system:String>
-    <system:String x:Key="CurrentPasswordTitle">Тренутна шифра</system:String>
-    <system:String x:Key="NewPasswordTitle">Нова шифра</system:String>
+    <system:String x:Key="ChangePasswordTitle">Промјени лозинку</system:String>
+    <system:String x:Key="CurrentPasswordTitle">Тренутна лозинка</system:String>
+    <system:String x:Key="NewPasswordTitle">Нова лозинка</system:String>
 
 </ResourceDictionary>

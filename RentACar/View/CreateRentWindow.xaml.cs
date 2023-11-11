@@ -54,7 +54,14 @@ namespace RentACar.View
 
                 if (numberOfDays > 0)
                 {
-                    totalPriceTextBlock.Text = $"Total price: {numberOfDays*car.PricePerDay}$";
+                    if (MainWindow.currentLanguage == 1)
+                    {
+                        totalPriceTextBlock.Text = $"Total price: {numberOfDays * car.PricePerDay}$";
+                    }
+                    else
+                    {
+                        totalPriceTextBlock.Text = $"Укупна цијена: {numberOfDays * car.PricePerDay}$";
+                    }
                     totalPrice = numberOfDays * (int)car.PricePerDay;
                 }
                 else

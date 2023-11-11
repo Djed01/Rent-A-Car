@@ -40,12 +40,12 @@ namespace RentACar.View.Admin
         {
             Car car = (Car)this.DataContext;
             CarDAO carDAO = new CarDAO();
-            carDAO.Delete(car.ChassisNumber);
-            if (File.Exists("../../.." + car.Image))
+            bool deleted = carDAO.Delete(car.ChassisNumber);
+            if (deleted && File.Exists("../../.." + car.Image))
             {
-                File.Delete("../../.." + car.Image);
-            }
                 CarsViewModel.RemoveCar(car);
+              //  File.Delete("../../.." + car.Image);
+            }
 
         }
     }

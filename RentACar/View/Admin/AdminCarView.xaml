@@ -25,8 +25,8 @@
             </Grid>
         </StackPanel>
         <StackPanel  Margin="100 0 40 0" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Vertical">
-            <Button Content="Edit" Click="EditButtonClick" Background="Lime" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Margin="0 0 0 10"/>
-            <Button Content="Del" Click="DeleteButtonClick" Background="Red" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Margin="0 10 0 0"/>
+            <Button Content="{DynamicResource EditTitle}" Click="EditButtonClick" Background="Lime" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Margin="0 0 0 10"/>
+            <Button Content="{DynamicResource DeleteTitle}" Click="DeleteButtonClick" Background="Red" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Margin="0 10 0 0"/>
         </StackPanel>
 
     </Grid>

@@ -54,8 +54,8 @@
 
 
 
-        <StackPanel  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20">
-            <TextBlock x:Name="totalPriceTextBlock" Foreground="{DynamicResource Text}" FontSize="16" FontWeight="Bold"/>
+        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20">
+            <TextBlock x:Name="totalPriceTextBlock" Foreground="{DynamicResource Text}" Margin="0 35 50 0" FontSize="16" FontWeight="Bold"/>
             <Button Content="{DynamicResource OkTitle}" Background="{DynamicResource Card}" Foreground="{DynamicResource Text}"  Width="50" Height="50" Margin="0 20 0 0" Click="Button_Click"/>
         </StackPanel>
         

@@ -53,8 +53,8 @@ namespace RentACar.Model.Database.DAO
                         idNumber = reader.GetString(3),
                         brand = reader.GetString(4),
                         model = reader.GetString(5),
-                        pickUp = reader.GetString(6),
-                        returnDate = reader.GetString(7),
+                        pickUp = reader.GetDateTime(6).ToString("dd-MM-yyyy"),
+                        returnDate = reader.GetDateTime(7).ToString("dd-MM-yyyy"),
                         totalPrice = reader.GetInt32(8)
                     });
                 }

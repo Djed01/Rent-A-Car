@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace RentACar.Model.Database.DAO
 {
@@ -111,7 +112,7 @@ namespace RentACar.Model.Database.DAO
             }
         }
 
-        public void Delete(String chassisNumber)
+        public bool Delete(String chassisNumber)
         {
             MySqlConnection conn = null;
             MySqlCommand cmd;
@@ -122,15 +123,25 @@ namespace RentACar.Model.Database.DAO
                 cmd.CommandText = DELETE;
                 cmd.Parameters.AddWithValue("@ChassisNumber", chassisNumber);
                 cmd.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
-                throw new Exception("Greska", ex);
+                if(MainWindow.currentLanguage == 1)
+                {
+                    MessageBox.Show("Unable to delete car it has an rent record!", "Info");
+                }
+                else
+                {
+                    MessageBox.Show("Немогуће обрисати аутомобил зато што постоји запис о изнајмљивању!", "Информација");
+                }
+                return false;
             }
             finally
             {
                 Util.CloseQuietly(conn);
             }
+
         }
 
     }

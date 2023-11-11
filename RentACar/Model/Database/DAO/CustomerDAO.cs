@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace RentACar.Model.Database.DAO
@@ -105,7 +106,14 @@ namespace RentACar.Model.Database.DAO
             }
             catch (Exception ex)
             {
-                throw new Exception("Greska", ex);
+                if (MainWindow.currentLanguage == 1)
+                {
+                    MessageBox.Show("Unable to delete customer because of existing rents!", "Info");
+                }
+                else
+                {
+                    MessageBox.Show("Клијент посједује записе о изнајмљивању немогуће обрисати!", "Информација");
+                }
             }
             finally
             {
