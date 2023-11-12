@@ -39,8 +39,10 @@ namespace RentACar.View
         {
             Customer customer = (Customer)dataGrid.SelectedItem;
             CustomerDAO customerDAO = new CustomerDAO();
-            customerDAO.Delete(customer.ID);
-            CustomersViewModel.RemoveCustomer(customer);
+            if (customerDAO.Delete(customer.ID))
+            {
+                CustomersViewModel.RemoveCustomer(customer);
+            }
         }
 
         private void EditCustomerClick(object sender, RoutedEventArgs e)

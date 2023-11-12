@@ -92,7 +92,7 @@ namespace RentACar.Model.Database.DAO
         }
 
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             MySqlConnection conn = null;
             MySqlCommand cmd;
@@ -103,6 +103,7 @@ namespace RentACar.Model.Database.DAO
                 cmd.CommandText = DELETE;
                 cmd.Parameters.AddWithValue("@idCUSTOMER", id);
                 cmd.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
@@ -114,6 +115,7 @@ namespace RentACar.Model.Database.DAO
                 {
                     MessageBox.Show("Клијент посједује записе о изнајмљивању немогуће обрисати!", "Информација");
                 }
+                return false;
             }
             finally
             {
