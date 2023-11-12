@@ -31,7 +31,6 @@ namespace RentACar.View.Admin
 
         private void AddEmployeeClick(object sender, RoutedEventArgs e)
         {
-            // Create a new window or navigate to a new page
             AddEmployeeWindow addEmployeeWindow = new AddEmployeeWindow();
             addEmployeeWindow.Show();
         }
@@ -40,7 +39,7 @@ namespace RentACar.View.Admin
         {
             if (dataGrid.SelectedItem != null)
             {
-                Employee selectedEmployee = (Employee)dataGrid.SelectedItem; // Assuming dataGrid is the name of your DataGrid control
+                Employee selectedEmployee = (Employee)dataGrid.SelectedItem;
 
                 EditEmployeeWindow editWindow = new EditEmployeeWindow(selectedEmployee);
                 editWindow.ShowDialog();
@@ -49,21 +48,18 @@ namespace RentACar.View.Admin
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // Get the text entered in the search TextBox
             string searchText = searchTextBox.Text;
 
-            // Access the collection view of the DataGrid's items source
+            // Collection view of the DataGrid items source
             ICollectionView view = CollectionViewSource.GetDefaultView(dataGrid.ItemsSource);
 
-            // Check if the collection view is valid
+
             if (view != null)
             {
-                // Apply a filter to the collection view
                 view.Filter = item =>
                 {
                     if (item is Employee employee)
                     {
-                        // Filter logic: Case-insensitive name comparison
                         return employee.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
                     }
                     return false;

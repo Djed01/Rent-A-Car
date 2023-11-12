@@ -97,7 +97,7 @@ namespace RentACar.View
                             else
                             {
                                 // Admin not found with the provided username and password
-                                return -1; // or any other suitable value to indicate no match
+                                return -1; 
                             }
                         }
                     }
@@ -114,7 +114,7 @@ namespace RentACar.View
                            "INNER JOIN employee e ON u.idUSER = e.USER_idUSER " +
                            "LEFT JOIN DEACTIVATED d ON e.USER_idUSER = d.EMPLOYEE_USER_idUSER " +
                            "WHERE u.Username = @username AND u.Password = @password " +
-                           "AND d.EMPLOYEE_USER_idUSER IS NULL"; // Check for deactivation
+                           "AND d.EMPLOYEE_USER_idUSER IS NULL"; 
 
             MySqlConnection conn = null;
             MySqlCommand cmd;
@@ -133,8 +133,8 @@ namespace RentACar.View
                     }
                     else
                     {
-                        // Admin not found with the provided username and password or deactivated
-                        return -1; // or any other suitable value to indicate no match or deactivation
+                        // Employee not found with the provided username and password or deactivated
+                        return -1; 
                     }
                 }
             }

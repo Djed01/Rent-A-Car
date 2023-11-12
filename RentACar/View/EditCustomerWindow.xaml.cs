@@ -27,8 +27,7 @@ namespace RentACar.View
         {
             InitializeComponent();
             this.selectedCustomer = selectedCustomer;
-            // Populate the text boxes, radio buttons, and other controls with the selected customer's data
-            // For example:
+
             NameTextBox.Text = selectedCustomer.Name;
             SurnameTextBox.Text = selectedCustomer.Surname;
             EmailTextBox.Text = selectedCustomer.Email;
@@ -42,9 +41,7 @@ namespace RentACar.View
             {
                 FemaleRadioButton.IsChecked = true;
             }
-            // ...
 
-            // Set up event handlers for Save/Update button, etc.
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -9,8 +9,8 @@ namespace RentACar.Model.Database
     interface IGenericDAO<T>
     {
         List<T> GetAll();
-    //    int Add(T item);
-     //   void Delete(int id);
-     //   void Update(int id, T item);
+       // int Add(T item);
+       // bool Delete(int id);
+       // void Update(int id, T item);
     }
 }

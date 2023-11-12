@@ -24,6 +24,7 @@ namespace RentACar.View.Admin
     public partial class AdminMainWindow : Window
     {
         public static int AdminID;
+        public static int Language;
         public AdminMainWindow(int adminID)
         {
             AdminID = adminID;
@@ -49,6 +50,7 @@ namespace RentACar.View.Admin
                 if (reader.Read())
                 {
                     language = reader.GetInt32(0);
+                    Language = language;
                     mode = reader.GetInt32(1);
 
 

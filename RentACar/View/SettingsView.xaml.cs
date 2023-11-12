@@ -134,7 +134,7 @@ namespace RentACar.View
             }
             catch (Exception ex)
             {
-                // Handle the exception, e.g., log or throw an error
+                // Exception
             }
             finally
             {
@@ -160,7 +160,7 @@ namespace RentACar.View
             }
             catch (Exception ex)
             {
-                // Handle the exception, e.g., log or throw an error
+                // Exception
             }
             finally
             {

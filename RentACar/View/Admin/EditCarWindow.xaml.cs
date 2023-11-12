@@ -45,7 +45,15 @@ namespace RentACar.View.Admin
                string.IsNullOrEmpty(PricePerDayTextBox.Text) ||
                string.IsNullOrEmpty(FuelTypeTextBox.Text))
             {
-                MessageBox.Show("Please fill in all the required fields.");
+
+                if (AdminMainWindow.Language == 0)
+                {
+                    MessageBox.Show("Попуните сва поља!");
+                }
+                else
+                {
+                    MessageBox.Show("Enter all fields!");
+                }
                 return;
             }
             else

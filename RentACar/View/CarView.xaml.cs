@@ -32,12 +32,8 @@ namespace RentACar.View
         private void RentButton_Click(object sender, RoutedEventArgs e)
         {
             Car car = (Car)this.DataContext;
-            // Create a new instance of the detailed car information window
             CreateRentWindow detailedInfoWindow = new CreateRentWindow(car);
 
-            Console.WriteLine(CarImage.Source);
-
-            // Show the detailed information window
             detailedInfoWindow.Show();
         }
 

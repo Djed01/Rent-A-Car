@@ -35,7 +35,15 @@ namespace RentACar.View.Admin
         {
             if (string.IsNullOrEmpty(ChassisNumberTextBox.Text))
             {
-                MessageBox.Show("You must first enter the chassisNumber!");
+                if(AdminMainWindow.Language == 0)
+                {
+                    MessageBox.Show("Унесите прво број шасије!");
+                }
+                else
+                {
+                    MessageBox.Show("You must first enter the chassisNumber!");
+                }
+                
             }
             else
             {
@@ -45,11 +53,11 @@ namespace RentACar.View.Admin
                 {
                     string selectedImagePath = openFileDialog.FileName;
 
-                    // Specify the destination folder and filename
-                    string destinationFolder = "../../../Assets/CarImages";  // Change to your desired destination folder
-                    string destinationFileName = ChassisNumberTextBox.Text + ".png";     // Change to your desired filename
+                    // Destination folder and filename
+                    string destinationFolder = "../../../Assets/CarImages";  
+                    string destinationFileName = ChassisNumberTextBox.Text + ".png";   
 
-                    // Combine the destination path
+     
                     string destinationPath = System.IO.Path.Combine(destinationFolder, destinationFileName);
 
                     try
@@ -73,7 +81,14 @@ namespace RentACar.View.Admin
                string.IsNullOrEmpty(PricePerDayTextBox.Text) ||
                string.IsNullOrEmpty(FuelTypeTextBox.Text))
             {
-                MessageBox.Show("Please fill in all the required fields.");
+                if (AdminMainWindow.Language == 0)
+                {
+                    MessageBox.Show("Попуните сва поља.");
+                }
+                else
+                {
+                    MessageBox.Show("Please fill in all the required fields.");
+                }
                 return;
             }
             else

@@ -51,7 +51,14 @@ namespace RentACar.View.Admin
             }
             else
             {
-                MessageBox.Show("Enter all fields!");
+                if (AdminMainWindow.Language == 0)
+                {
+                    MessageBox.Show("Попуните сва поља!");
+                }
+                else
+                {
+                    MessageBox.Show("Enter all fields!");
+                }
             }
 
             

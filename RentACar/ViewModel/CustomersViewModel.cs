@@ -21,7 +21,6 @@ namespace RentACar.ViewModel
 
         }
 
-        // Add a method for adding customers
         public static void AddCustomer(Customer customer)
         {
             Customers.Add(customer);

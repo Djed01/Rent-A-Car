@@ -37,7 +37,6 @@ namespace RentACar.View
 
         private void OpenNewWindow(object sender, RoutedEventArgs e)
         {
-            // Create a new window or navigate to a new page
             AddCustomerWindow addCustomerWindow = new AddCustomerWindow();
             addCustomerWindow.Show();
         }
@@ -78,21 +77,17 @@ namespace RentACar.View
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // Get the text entered in the search TextBox
             string searchText = searchTextBox.Text;
 
-            // Access the collection view of the DataGrid's items source
+            // Collection view of the DataGrid items source
             ICollectionView view = CollectionViewSource.GetDefaultView(dataGrid.ItemsSource);
 
-            // Check if the collection view is valid
             if (view != null)
             {
-                // Apply a filter to the collection view
                 view.Filter = item =>
                 {
                     if (item is Customer customer)
                     {
-                        // Filter logic: Case-insensitive name comparison
                         return customer.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
                     }
                     return false;
@@ -115,7 +110,6 @@ namespace RentACar.View
 
         private Rent CreateRent()
         {
-            // Get the selected customer and dates from your window
             Customer selectedCustomer = dataGrid.SelectedItem as Customer;
             string pickupDate = pickupDatePicker.SelectedDate?.ToString("yyyy-MM-dd");
             string returnDate = returnDatePicker.SelectedDate?.ToString("yyyy-MM-dd");
@@ -123,7 +117,6 @@ namespace RentACar.View
             // Check if all required information is available
             if (selectedCustomer != null && !string.IsNullOrEmpty(pickupDate) && !string.IsNullOrEmpty(returnDate))
             {
-                // Create a new Rent object
                 Rent rent = new Rent()
                 {
                     CustomerID = selectedCustomer.ID,
@@ -138,8 +131,6 @@ namespace RentACar.View
             }
             else
             {
-                // Handle the case where not all required information is provided.
-                // You can display an error message or return null, depending on your requirements.
                 return null;
             }
         }
