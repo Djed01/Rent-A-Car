@@ -5,6 +5,7 @@ using RentACar.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -114,17 +115,51 @@ namespace RentACar.View
             string pickupDate = pickupDatePicker.SelectedDate?.ToString("yyyy-MM-dd");
             string returnDate = returnDatePicker.SelectedDate?.ToString("yyyy-MM-dd");
 
-            // Check if all required information is available
             if (selectedCustomer != null && !string.IsNullOrEmpty(pickupDate) && !string.IsNullOrEmpty(returnDate))
             {
+                // Check for overlapping rents in the database
+                RentDAO rentDAO = new RentDAO();
+                List<RentInfo> existingRents = rentDAO.GetAll();
+                DateTime existingPickupDate = new DateTime();
+                DateTime existingReturnDate = new DateTime();
+
+                bool isOverlapping = existingRents.Any(rent =>
+                {
+                    existingPickupDate = DateTime.ParseExact(rent.pickUp, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                    existingReturnDate = DateTime.ParseExact(rent.returnDate, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                    DateTime newPickupDate = DateTime.ParseExact(pickupDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                    DateTime newReturnDate = DateTime.ParseExact(returnDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+
+                    // Check for date overlap
+                    return rent.idRent != 0 &&
+                           rent.brand == car.Brand && 
+                           rent.model == car.Model && 
+                           ((newPickupDate >= existingPickupDate && newPickupDate <= existingReturnDate) ||
+                            (newReturnDate >= existingPickupDate && newReturnDate <= existingReturnDate));
+                });
+
+                if (isOverlapping)
+                {
+                    if (MainWindow.currentLanguage == 0)
+                    {
+                        MessageBox.Show("Овај аутомобил је изнајмљен од " + existingPickupDate.ToString("dd-MM-yyyy") + " до " + existingReturnDate.ToString("dd-MM-yyyy"));
+                    }
+                    else
+                    {
+                        MessageBox.Show("This car is rented from " + existingPickupDate.ToString("dd-MM-yyyy") + " to " + existingReturnDate.ToString("dd-MM-yyyy"));
+                    }
+                    return null;
+                }
+
+                // Continue with creating the rent if no overlapping rents were found
                 Rent rent = new Rent()
                 {
                     CustomerID = selectedCustomer.ID,
-                    ChassisNumber = car.ChassisNumber,
+                    ChassisNumber = car.ChassisNumber, 
                     PickupDate = pickupDate,
                     ReturnDate = returnDate,
                     TotalPrice = totalPrice,
-                    EmployeeID = MainWindow.EmployeeID 
+                    EmployeeID = MainWindow.EmployeeID
                 };
 
                 return rent;
@@ -134,6 +169,7 @@ namespace RentACar.View
                 return null;
             }
         }
+
 
     }
 }
